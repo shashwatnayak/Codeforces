@@ -34,56 +34,50 @@ void selection(vi& a){}
 //mergesort o nlgn
 //seg fault error in mergesort maybe due to vector, can try for array
 
-void merge(vi& a,int l,int m,int r){
-int i,j,k;
+void merge(vi& left,vi& right,vi& orig){
+int i = 0, j = 0, k = 0;
+int n1 = left.size();
+int n2 = right.size();
 
-int n1 = m - l + 1 ;
-int n2 = r - m ;
-vi left(n1);
-vi right(n2);
-for(i = 0 ;i<n1;i++){
-  left.push_back(a[l+i]);
-}
-for(j = 0;j<n2;j++){
-  right.push_back(a[k+1+j]);
-}
-i = 0;
-j = 0;
-k = l;
-
-while(i< n1 && j < n2 && l <= r){
+while(i < n1 && j < n2 ){
   if(left[i] <= right[j]){
-    a[k] = left[i];
+    orig[k] = left[i];
     i++;
   }else{
-    a[k] = right[j];
+    orig[k] = right[j];
     j++;
   }
   k++;
 }
-while(i<n1){
-  a[k] = left[i];
+while(i < n1){
+  orig[k] = left[i];
   i++;
   k++;
 }
-while(j<n2){
-  a[k] = right[j];
+while(j  <n2){
+  orig[k] = right[j];
   j++;
   k++;
 }
-
 }
-void mergesort(vi& a,int l ,int r){
+void mergesort(vi& a){
 //split array into 2 parts
 //recursively follow up in first half
 //recursively follow up in second half;
 //merge both and return array
-if(l<r){
-int k = (l+r)/2;
-mergesort(a,l,k);
-mergesort(a,k+1,r);
-merge(a,l,k,r);
+vi left;
+vi right;
+int mid = (a.size()/2);
+for(int i = 0;i<mid;i++){
+  left.push_back(a[i]);
 }
+for(int j = 0;j<(a.size()) - mid;j++){
+  right.push_back(a[j+mid]);
+}
+
+mergesort(left);
+mergesort(right);
+merge(left,right,a);
 }
 //quicksort o lgn
 void quicksort(){
@@ -103,5 +97,6 @@ print(a);
 // bubble(a);
 // print(a);
 
-mergesort(a,0,a.size()-1);
+mergesort(a);
+print(a);
 }
