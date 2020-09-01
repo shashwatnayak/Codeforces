@@ -39,21 +39,29 @@ void printpairs(vi a){
 // a+b = c
 
 void printabc(vi a,int c){
-  mi m;
-  int n = a.size();
-  for(int i = 0;i<n;i++){
-    int diff = c - a[i];
-    m[a[i]] = diff;
+int n = a.size();
+// o n^2
+// for(int i = 0;i<n;i++){
+//   for(int j = i + 1 ;i<n;i++){
+//     if(a[i] + a[j] == c){
+//       cout <<a[i] << " " << a[j] <<endl;
+//     }
+//   }
+// }
+
+// o n
+mi m;
+for(int i = 0;i<n;i++){
+  int diff = c - a[i];
+  m[diff] = a[i];
+}
+for(int i = 0; i<n;i++){
+  if(m.find(a[i]) == m.end()){
+    cout << "No pair" <<endl;
+  }else{
+    cout << a[i] << "+" << m[a[i]] <<endl;
   }
-  for(int i = 0;i<n;i++){
-    int match = m[a[i]];
-    //cout<<match<<"\n";
-    if(m.find(a[i]) == m.end()){
-      cout<< "No pair Exist \n";
-    }else {
-      cout<< m[a[i]]<< a[i] <<endl;
-    }
-  }
+}
 }
 int main(){
 vi a;
