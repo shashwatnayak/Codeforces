@@ -1,4 +1,6 @@
 #include<iostream>
+#include<queue>
+#include<vector>
 using namespace std;
 
 class TreeNode{
@@ -58,13 +60,37 @@ cout<<root->data << " ";
 
 //BFS Based Tree Parsing
 
+void bfs_tree(TreeNode *root){
+
+  queue<TreeNode* > q;
+  q.push(root);
+  q.push(NULL);
+while(q.size() > 1){
+  TreeNode *cur = q.front();
+  q.pop();
+if(cur==NULL){
+  q.push(NULL);
+  cout<<"\n";
+}else{
+  if(cur->left){
+    q.push(cur->left);
+  }
+  if(cur->right){
+    q.push(cur->right);
+  }
+  cout<<cur->data << " ";
+}
+}
+}
 int main(){
 TreeNode *root = createTree();
-preorder(root);
-cout<<"\n";
-inorder(root);
-cout<<"\n";
-postorder(root);
-cout<<"\n";
+// preorder(root);
+// cout<<"\n";
+// inorder(root);
+// cout<<"\n";
+// postorder(root);
+// cout<<"\n";
+
+bfs_tree(root);
 
 }
