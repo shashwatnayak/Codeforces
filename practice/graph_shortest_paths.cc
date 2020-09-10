@@ -6,7 +6,7 @@
 
 using namespace std;
 //Weighted Graph
-/*
+
 template<typename T>
 class Graph{
     map<T,list<pair<T,T> > > w_adjlist;
@@ -18,23 +18,29 @@ class Graph{
         w_adjlist[dest].push_back(make_pair(src,weight));
     }
 
-    void print_graph(){
+    void print_graph_with_weights(){
         for(auto i : w_adjlist){
             cout << i.first<<"->";
-            pair<T,T > :: iterator p;
-               // for(auto p : i.second){
-                  //  cout<<p.first<<"-"<<p.second<<" " ;
-                //}
-                for(p = ;p<i.second;p++){
-                    cout<< *(p.first) << "-" << *(p.second) << " ";
+            
+               for(auto p : i.second){
+                  cout<<p.first<<"-"<<p.second<<" " ;
                 }
+                // auto couldnt be identified
+                // pair<T,T > :: iterator p;
+                // for(p = ;p<i.second;p++){
+                //     cout<< *(p.first) << "-" << *(p.second) << " ";
+                // }
                 cout<<endl;
         }
     }
 
   
-}; */
+};
 
+// To do
+// BELLMAN FORD
+// DJIKSTRA ALGORITHM
+// FLOYD WARSHALL 
 template<typename T>
 class _Graph{
 
@@ -62,8 +68,9 @@ class _Graph{
         queue<T> q;
         map<T,int> distance;
         map<T,T> parent;
+
         for(auto i : adjlist){
-            distance[i] = INT_MAX;
+            distance[i.first] = 1e9;
         }
 
         q.push(src);
@@ -76,33 +83,33 @@ class _Graph{
             cout<<node << " ";
 
             for(int ngbr : adjlist[node]){
-                if(distance[ngbr] == INT_MAX){
+                if(distance[ngbr] == 1e9){
                     q.push(ngbr);
-                    distance[ngbr] = distance[src] + 1;
-                    parent[ngbr] = src;
+                    distance[ngbr] = distance[node] + 1;
+                    parent[ngbr] = node;
                 }
             }
         }
         
         for(auto i : adjlist){
             T node = i.first;
-            cout << "Dist"
+            cout << "Dist of node " << node << " from source " << src <<" is "<< distance[node]<<endl;
         }
     }
 };
 
 
-//void test1(){
-  //      Graph <int> g1;
-    //    g1.add_edge(0,1,1);
-      //  g1.add_edge(0,2,1);
-        //g1.add_edge(2,3,1);
-        //g1.add_edge(1,2,1);
-        //g1.add_edge(1,4,1);
-        //g1.add_edge(3,4,1);
+void test1(){
+       Graph <int> g1;
+       g1.add_edge(0,1,2);
+       g1.add_edge(0,2,4);
+        g1.add_edge(2,3,3);
+        g1.add_edge(1,2,5);
+        g1.add_edge(1,4,1);
+        g1.add_edge(3,4,9);
 
-        //g1.print_graph();
-    //}
+        g1.print_graph_with_weights();
+    }
 
 void test2(){
     _Graph <int> g1;
@@ -114,12 +121,13 @@ void test2(){
     g1.add_edge(3,4);
 
     g1.print_graph();
-//cout<<"\n";
-//g1.dfs(0);
-//cout<<"\n";
-//g1.bfs(0);
+
+    cout<<"\n";
+    g1.distance_between_nodes(0);
+
 }
 int main(){
-    // test1();
+    test1();
+    cout<<"\n";
     test2();
 }
