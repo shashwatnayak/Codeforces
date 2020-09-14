@@ -1,0 +1,14 @@
+This file will contain all the Algorithms that i have practiced so far, More will be added 
+DONE
+Basic_Graph
+DFS
+BFS
+Weighted_Graph
+Single Source Shortest Path
+
+TD
+Linked List
+Trees
+BST
+Subsets 
+Permutations
