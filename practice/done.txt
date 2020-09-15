@@ -5,10 +5,11 @@ DFS
 BFS
 Weighted_Graph
 Single Source Shortest Path
+Trees(Traversals & More to do)
 
 TD
 Linked List
-Trees
+Trees (Traversals,summation,lca,misc,construction and converstion,check if)
 BST
 Subsets 
 Permutations
