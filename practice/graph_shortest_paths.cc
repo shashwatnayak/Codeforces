@@ -32,6 +32,16 @@ class Graph{
                 // }
                 cout<<endl;
         }
+    
+    int djikstra(T src, T dest){
+        const int inf = 1e9;
+        map<T,int> dist;
+        priority_queue<,,greater>
+        for(auto i : w_adjlist){
+            dist[i.first] = inf;
+        }
+
+    }
     }
 
   
@@ -68,6 +78,7 @@ class _Graph{
         queue<T> q;
         map<T,int> distance;
         map<T,T> parent;
+
 
         for(auto i : adjlist){
             distance[i.first] = 1e9;
