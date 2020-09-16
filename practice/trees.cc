@@ -60,13 +60,41 @@ void inorder2(TreeNode* root){
     }
 }
 
+void inorder3(TreeNode* root){
+
+    TreeNode* cur = root;
+    TreeNode* prev;
+
+    while(cur!=NULL){
+
+        if(cur->left==NULL){
+            cout<<cur->val<<" ";
+            cur = cur->right;
+        }else{
+            prev = cur->left;
+            while(prev->right!=NULL && prev->right!=cur){
+                prev = prev->right;
+            }
+
+            if(prev->right == NULL){
+                prev->right = cur;
+                cur = cur->left;
+            }else{
+                prev->right = NULL;
+                cout<<cur->val << " ";
+                cur = cur->right;
+            }
+        }
+    }
+}
+
 void preorder(TreeNode* root){
     if(root==NULL){
         return;
     }
     cout<<root->val << " ";
     preorder(root->left);
-    preoder(root->right);
+    preorder(root->right);
 }
 
 void preorder2(TreeNode* root){
@@ -127,7 +155,7 @@ void levelorder(TreeNode *root){
     TreeNode* cur = root;
     q.push(cur);
 
-    while(!q.empty(){
+    while(!q.empty()){
         TreeNode* temp = q.front();
         q.pop();
         cout<<temp->val << " ";
@@ -149,7 +177,7 @@ q.push(make_pair(0,cur));
 
 while(!q.empty()){
     TreeNode* a = q.front().second;
-    int hd = q.front().first
+    int hd = q.front().first;
     m[hd].push_back(a);
 
     if(a->left){
@@ -188,11 +216,14 @@ int main(){
     //preorder2(root); // 1 stack
     //postorder(root); // recursion
     //postorder2(root); //2 stack
-    //inorder3(root); // no stack and no recursion
+    inorder3(root); // no stack and no recursion
     //postorder3(root); // 1 stack
     //levelorder(root) // 1 queue
     //verticalorder(root); // map
 
-    //What's Morris Traversal ? 
+    // What's Morris Traversal ? 
+    // if left child of cur node exist, Point rightmost node of left subtree towards right subtree(handle right node cases as well)
+    // and start processing left nodes
+    // Other wise print left node and start processing right nodes   
 
 }
