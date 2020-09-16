@@ -198,32 +198,102 @@ while(it!=m.end()){
 }
 
 }
+
+bool symmetryTree(TreeNode* r1,TreeNode* r2){
+    if(r1 == NULL && r2 == NULL){
+        return true;
+    }
+
+    if( r1 && r2 &&r1->val == r2->val){
+        return symmetryTree(r1->left,r2->right) && symmetryTree(r1->right,r2->left);
+    }
+
+    return false;
+}
+
+void boundaryprint(){
+
+    //print left boundary;
+    //print left subtree right to left;
+    //print right subtree right to left;
+    //print right boundary;
+}
 //Construction and conversion
 
-//Check if
+int SumTree(TreeNode* root){
+    if(root == NULL){
+        return 0;
+    }
+    int old_val = root->val;
 
+    root->val = SumTree(root->left) + SumTree(root->right);
+
+    return root->val + old_val;
+}
+//Check if
+bool isMirror(TreeNode* r1,TreeNode* r2){
+    if(r1==NULL && r2==NULL){
+        return true;
+    }
+    // if(r1 == NULL || r2 == NULL){
+    //     return false;
+    // }
+    if(r1 && r2 && r1->val == r2->val){
+        return isMirror(r1->left,r2->right) && isMirror(r1->right,r2->left); 
+    }
+    return false;
+}
+
+bool isIdentical(TreeNode* r1,TreeNode* r2){
+    if(r1 == NULL && r2 == NULL){
+        return true;
+    }
+    if(r1 && r2 && r1->val == r2->val){
+        return isIdentical(r1->left,r2->left) && isIdentical(r1->right,r2->right);
+    }
+}
 //Summation
 
 //LCA
+TreeNode* LCA(TreeNode* root,int key1,int key){
+if(root==NULL){
+    return NULL;  // base case
+}
+if(root->val == key1 || root->val == key2){  // if 1 key match return root.
+    return root;
+}
+TreeNode* left_subTree = LCA(root->left,key1,key2); //check left subtree
+TreeNode* right_subTree = LCA(root->right,key1,key2); // check right subtree
 
+if(left_subTree && right_subTree) return root; // if left and right subtree has key in left and right trees respectively return common node
+return  (left_subTree == NULL) ? right_subTree:left_subTree; // otherwise check in left or right sub tree
+}
 //Extra
 int main(){
 
     TreeNode *root = MakeTree();
+    TreeNode *root1 = MakeTree();
+    TreeNode *root2 = MakeTree();
     //inorder(root); // recursion
     //inorder2(root); // 1 stack
     //preorder(root); //recursion
     //preorder2(root); // 1 stack
     //postorder(root); // recursion
     //postorder2(root); //2 stack
-    inorder3(root); // no stack and no recursion
+    //inorder3(root); // no stack and no recursion
     //postorder3(root); // 1 stack
     //levelorder(root) // 1 queue
     //verticalorder(root); // map
+    
 
     // What's Morris Traversal ? 
     // if left child of cur node exist, Point rightmost node of left subtree towards right subtree(handle right node cases as well)
     // and start processing left nodes
     // Other wise print left node and start processing right nodes   
+
+    cout<< symmetryTree(root,root);
+    cout<< isMirror(root1,root2);
+    cout<<SumTree(root);
+    cout<<isIdentical(root,root);
 
 }
