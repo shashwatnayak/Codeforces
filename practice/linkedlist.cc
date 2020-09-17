@@ -38,17 +38,99 @@ void printLL(Node* a){
     cout<<endl;
 }
 
+int Length(Node* a){
+    int c = 0;
+    while(a!=NULL){
+        c++;
+        a = a->next;
+    }
+    return c;
+}
+//Reverse List
+Node* ReverseList(Node* a){
+    Node* cur = a;
+    Node* prev = NULL;
+    while(cur!=NULL){
+        Node* ahead = cur->next;
+        cur->next = prev;
+        prev = cur;
+        cur = ahead;
+    }
+
+    return prev;
+}
+Node* getMiddle(Node* cur){
+    
+    int len = Length(cur);
+    if(len%2==0){
+        len = (len/2) - 1;
+    }else{
+        len = len/2;
+    }
+    Node* tmp = cur;
+    while(tmp!=NULL && len!=0){
+        len--;
+        tmp = tmp->next;
+    }
+
+    return tmp;
+}
 //Palindrome List
+bool isPalindrome(Node* a){
+    Node* cur = a;
+    Node* cur2 = getMiddle(a);
+    Node* cur3 = cur2->next;
+    cur2->next = NULL;
+    cur3 = ReverseList(cur3);
+
+    while(cur3!=NULL && cur!=NULL){
+        if(cur3->val!=cur->val){
+            return false;
+        }
+        cur3 = cur->next;
+        cur = cur->next;
+    }
+    return true;
+}
 //Remove Duplicates I and II
 //Merge Lists
+// working or not ?
+Node* Merge(Node* a,Node* b){
+    if(a==NULL){
+        return b;
+    }else if(b == NULL){
+        return a;
+    }
+    }
+    if(a->val > b->val){
+        b->next = Merge(a,b->next);
+        return a;
+    }else{
+        a->next = Merge(a->next,b);
+        return b;
+    }
+}
 //Remove Nth Node from end
-//Reverse List
 //K Reverse List
 //Swap List Nodes in pairs
 //Rotate List
 //Add two numbers in List
 //Cycle Detection in List
 //Merge sort
+
+Node* MergeSort(Node* cur){
+    if(cur==NULL && cur->next==NULL)return;
+    Node* a = cur;
+    Node* midnode = getMiddle(cur);
+    Node* b = midnode->next;
+    midnode->next = NULL;
+
+    a = MergeSort(a);
+    b = MergeSort(b);
+    Node* c = Merge(a,b);
+
+    return c;
+}
 //Partition List
 //Insertion Sort
 //Bubble Sort
@@ -57,10 +139,85 @@ void printLL(Node* a){
 //Circular List
 //Double Linked List
 //Intersection List
+
+Node* IntersectList(Node* a,Node* b){
+    int l1,l2,l3;
+    l1 = l2 = l3 = 0;
+    //Node* slow = NULL;
+    //Node* fast = NULL:
+    l1 = Length(a);
+    l2 = Length(b);
+
+    if(l2>l1){
+        l3 = l2-l1;
+        while(l3!=0){
+            l3--;
+            b = b->next;
+        }
+    }else{
+        l3 = l1-l2;
+        while(l3!=0){
+            l3--;
+            a = a->next;
+        }
+    }
+
+    while(a!=NULL && b!=NULL){
+        a = a->next;
+        b = b->next;
+    }
+    return a;
+
+}
 //Sort Binary Linked List
+
+void sortBinaryList(Node* a){
+    Node* cur = a;
+    Node* fix = a;
+    int n0,n1;
+    n0 = n1 = 0;
+
+    while(cur!=NULL){
+        if(cur->val == 0){
+            n0++;
+        }
+        if(cur->val == 1){
+            n1++;
+        }
+        cur = cur->next;
+    }
+
+    while(fix!=NULL && n0!=0){
+        n0--;
+        fix->val = 0;
+        fix = fix->next;
+    }
+    while(fix!=NULL && n1!=0){
+        n1--;
+        fix->val = 1;
+        fix = fix->next;
+    }
+
+    printLL(a);
+}
 //Kth Node from Middle
 //Even Reverse
 int main(){
     Node* a = createLL();
-    printLL(a);
+    //Node* b = createLL();
+
+    //printLL(a);
+    //a = ReverseList(a);  <! works 
+    //printLL(a);
+
+    //cout<<isPalindrome(a);  ?? check
+    // a = IntersectList(a,b); ??check 
+    // cout<<a->val;
+
+    //sortBinaryList(a);  ?? check 
+    // a = getMiddle(a);   <! works
+    // cout<<a->val;
+    
+    //a = MergeSort(a); ?? check
+    //printLL(a);
     }
