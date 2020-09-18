@@ -251,11 +251,13 @@ bool isIdentical(TreeNode* r1,TreeNode* r2){
     if(r1 && r2 && r1->val == r2->val){
         return isIdentical(r1->left,r2->left) && isIdentical(r1->right,r2->right);
     }
+
+    return false;
 }
 //Summation
 
 //LCA
-TreeNode* LCA(TreeNode* root,int key1,int key){
+TreeNode* LCA(TreeNode* root,int key1,int key2){
 if(root==NULL){
     return NULL;  // base case
 }
@@ -269,6 +271,37 @@ if(left_subTree && right_subTree) return root; // if left and right subtree has 
 return  (left_subTree == NULL) ? right_subTree:left_subTree; // otherwise check in left or right sub tree
 }
 //Extra
+
+void TopView(TreeNode* root){
+if(root == NULL){return;}
+TreeNode* cur = root;
+queue<pair<int,TreeNode*> >q;
+map<int,TreeNode*> m;
+q.push(make_pair(0,cur));
+
+while(!q.empty()){
+    TreeNode* tmp = q.front().second;
+    int hd = q.front().first;
+
+    m[hd] = tmp;
+    if(tmp->left){
+        q.push(make_pair(hd-1,tmp->left));
+    }
+    if(tmp->right){
+        q.push(make_pair(hd+1,tmp->right));
+    }
+}
+
+
+
+map<int,TreeNode*> :: iterator it = m.begin();
+
+while(it!=m.end()){
+    cout<<it->second->val << " ";
+    it++;
+}
+
+}
 int main(){
 
     TreeNode *root = MakeTree();
@@ -291,9 +324,11 @@ int main(){
     // and start processing left nodes
     // Other wise print left node and start processing right nodes   
 
-    cout<< symmetryTree(root,root);
-    cout<< isMirror(root1,root2);
-    cout<<SumTree(root);
-    cout<<isIdentical(root,root);
+    // cout<< symmetryTree(root,root);
+    // cout<< isMirror(root1,root2);
+    // cout<<SumTree(root);
+    // cout<<isIdentical(root,root);
+
+    // TopView(root); not working better to check new solution for its 
 
 }
