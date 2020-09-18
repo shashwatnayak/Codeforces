@@ -93,6 +93,32 @@ bool isPalindrome(Node* a){
     return true;
 }
 //Remove Duplicates I and II
+// Some problem with this question
+Node* remove_Duplicates(Node* head,int key){
+    if(head==NULL)return NULL;
+    
+    while(head->val == key){
+        head = head->next;
+    }
+
+    Node* prev = NULL;
+    Node* cur = head;
+    while(cur!=NULL && cur->next!=NULL){
+        Node* ahd = cur->next;
+        
+        while(cur->val == key){
+            if(cur->next!=NULL){
+            cur = cur->next;
+            }else{
+                cur->next = NULL;
+            }
+            prev->next = ahd;
+        }
+        prev = cur;
+        cur = ahd;
+    }
+    return head;
+}
 //Merge Lists
 // working or not ?
 Node* Merge(Node* a,Node* b){
