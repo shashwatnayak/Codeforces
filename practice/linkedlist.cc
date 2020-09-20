@@ -122,19 +122,23 @@ Node* remove_Duplicates(Node* head,int key){
 //Merge Lists
 // working or not ?
 Node* Merge(Node* a,Node* b){
+    Node* res = NULL;
     if(a==NULL){
         return b;
     }else if(b == NULL){
         return a;
     }
-    }
+
     if(a->val > b->val){
+        res = b;
         b->next = Merge(a,b->next);
-        return a;
+        return res ;
     }else{
+        res = a;
         a->next = Merge(a->next,b);
-        return b;
+        return res;
     }
+    return res;
 }
 //Remove Nth Node from end
 //K Reverse List
@@ -145,17 +149,19 @@ Node* Merge(Node* a,Node* b){
 //Merge sort
 
 Node* MergeSort(Node* cur){
-    if(cur==NULL && cur->next==NULL)return;
+    if(cur==NULL && cur->next==NULL)return cur;
     Node* a = cur;
     Node* midnode = getMiddle(cur);
+    //cout<<midnode->val << " a";
     Node* b = midnode->next;
     midnode->next = NULL;
+    printLL(a);
+    printLL(b);
+    //a = MergeSort(a);
+    //b = MergeSort(b);
+    //Node* c = Merge(a,b);
 
-    a = MergeSort(a);
-    b = MergeSort(b);
-    Node* c = Merge(a,b);
-
-    return c;
+    return NULL;
 }
 //Partition List
 //Insertion Sort
@@ -244,6 +250,6 @@ int main(){
     // a = getMiddle(a);   <! works
     // cout<<a->val;
     
-    //a = MergeSort(a); ?? check
-    //printLL(a);
+    a = MergeSort(a); 
+    printLL(a);
     }
