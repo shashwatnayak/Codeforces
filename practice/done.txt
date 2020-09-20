@@ -3,13 +3,22 @@ DONE
 Basic_Graph
 DFS
 BFS
-Weighted_Graph
 Single Source Shortest Path
-Trees(Traversals & More to do)
 
-TD
+On Work
+Weighted_Graph
+Trees(Traversals & More to do)
 Linked List
 Trees (Traversals,summation,lca,misc,construction and converstion,check if)
+
+
+TD
 BST
+Segment Trees
+Tries
 Subsets 
 Permutations
+*More Advanced Graph Problems
+Dynamic Programming
+Greedy Algorithms
+
