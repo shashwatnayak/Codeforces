@@ -59,21 +59,18 @@ Node* ReverseList(Node* a){
 
     return prev;
 }
-Node* getMiddle(Node* cur){
-    
-    int len = Length(cur);
-    if(len%2==0){
-        len = (len/2) - 1;
-    }else{
-        len = len/2;
-    }
-    Node* tmp = cur;
-    while(tmp!=NULL && len!=0){
-        len--;
-        tmp = tmp->next;
-    }
 
-    return tmp;
+Node* getMiddle(Node* cur){
+//Fixed
+Node* slow = cur;
+Node* fast = cur->next;
+// fast = fast->next;
+
+while(fast!=NULL && fast->next!=NULL){
+    fast = fast->next->next;
+    slow = slow->next;
+}
+return slow;
 }
 //Palindrome List
 bool isPalindrome(Node* a){
@@ -120,25 +117,27 @@ Node* remove_Duplicates(Node* head,int key){
     return head;
 }
 //Merge Lists
-// working or not ?
-Node* Merge(Node* a,Node* b){
-    Node* res = NULL;
-    if(a==NULL){
-        return b;
-    }else if(b == NULL){
-        return a;
-    }
+//Fixed
 
-    if(a->val > b->val){
-        res = b;
-        b->next = Merge(a,b->next);
-        return res ;
-    }else{
-        res = a;
-        a->next = Merge(a->next,b);
-        return res;
-    }
-    return res;
+Node* merge(Node*a,Node*b){
+	if(a==NULL){
+		return b;
+	}
+	else if(b==NULL){
+		return a;
+	}
+
+	//Otherwise !
+	Node* c;
+	if(a->val < b->val){
+		c = a;
+		c->next = merge(a->next,b);
+	}
+	else{
+		c = b;
+		c->next = merge(a,b->next);
+	}
+	return c;
 }
 //Remove Nth Node from end
 //K Reverse List
@@ -148,20 +147,23 @@ Node* Merge(Node* a,Node* b){
 //Cycle Detection in List
 //Merge sort
 
-Node* MergeSort(Node* cur){
-    if(cur==NULL && cur->next==NULL)return cur;
-    Node* a = cur;
-    Node* midnode = getMiddle(cur);
-    //cout<<midnode->val << " a";
-    Node* b = midnode->next;
-    midnode->next = NULL;
-    printLL(a);
-    printLL(b);
-    //a = MergeSort(a);
-    //b = MergeSort(b);
-    //Node* c = Merge(a,b);
+Node* mergeSort(Node *head){
+	if(head==NULL||head->next==NULL){
+		return head;
+	}
 
-    return NULL;
+	//Rec Case
+	Node *mid = getMiddle(head);
+	Node *a = head;
+	Node *b = mid->next;
+	mid->next = NULL;
+
+	//Sort the two halves
+	a = mergeSort(a);
+	b = mergeSort(b);
+
+	return merge(a,b);
+
 }
 //Partition List
 //Insertion Sort
@@ -250,6 +252,6 @@ int main(){
     // a = getMiddle(a);   <! works
     // cout<<a->val;
     
-    a = MergeSort(a); 
-    printLL(a);
+    printLL(mergeSort(a)); 
+    // printLL(a);
     }
