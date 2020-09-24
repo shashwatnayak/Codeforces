@@ -4,6 +4,7 @@
 using namespace std;
 
 int board[N][N] = {};
+int knightBoard[N][N] = {};
 //N queens
 void printboard(int board[][N],int n){
     for(int i = 0;i<n;i++){
@@ -71,21 +72,46 @@ void countNqueen(int n,int r,int &c){
     }
 }
 
+//Knight Tour
+bool checkVal(int x,int y,int c,int n){
+if(x>=0 && x<(n*n) && y>=0 && y<(n*n)){
+    return true;
+}
+return false;
+}
+int row[] = {1,2,2,1,-1,-2,-2,-1};
+int col[] = {2,1,-1,-2,-2,-1,1,2};
+void knightTour(int oldx,int oldy,int &c,int n){
+    if(c==n*n){
+        printboard(knightBoard,n);
+        return;
+    }
+    for(int i = 0;i<8;i++){
+        int newx = oldx + row[i];
+        int newy = oldy + col[i];
+        if(checkVal(newx,newy,c,n)){
+            knightBoard[newx][newy] = c++;
+            knightTour(newx,newy,c,n);
+            knightBoard[newx][newy] = 0; 
+        }
+    }
+}
 int main(){
 int n;
 cin>>n;
-bool a = nqueen(n,0);
-if(a){
-    printboard(board,n);
-}else{
-    cout<< "No possible board"<<"\n";
-}
+// bool a = nqueen(n,0);
+// if(a){
+//     printboard(board,n);
+// }else{
+//     cout<< "No possible board"<<"\n";
+// }
+
+knightTour(0,0,1,n);
 }
 
 
 //Connectivity Check 
 //Bi-partite
 //Cycle Detection
-//Knight Tour
 //Hamiltonion Path
 //Eulerian Path
