@@ -33,3 +33,6 @@ int main() {
   //printf("%d\n", query(3, 11));
   return 0;
 }
+
+// For Reference, Understanding and more questions
+// https://codeforces.com/blog/entry/18051
