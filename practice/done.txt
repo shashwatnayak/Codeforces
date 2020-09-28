@@ -15,6 +15,7 @@ Trees (Traversals,summation,lca,misc,construction and converstion,check if)
 TD
 BST
 Segment Trees
+Fenwick Trees
 Tries
 Subsets 
 Permutations
