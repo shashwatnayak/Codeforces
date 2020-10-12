@@ -15,7 +15,20 @@ void permute(string a,int l,int r){
     }
   }
 }
+void search(){
+  if(perm.size()==n){
+    
+  }else{
 
+    for(int i = 0;i<n;i++){
+      if(chosen[i]) continue;
+      perm.push_back(i);
+      search();
+      chosen[i] = false;
+      perm.pop_back();
+    }
+  }
+}
 int main(){
 
 
