@@ -10,15 +10,15 @@ Weighted_Graph
 Trees(Traversals & More to do)
 Linked List
 Trees (Traversals,summation,lca,misc,construction and converstion,check if)
+Subsets 
+Permutations
+BST
 
 
 TD
-BST
 Segment Trees
 Fenwick Trees
 Tries
-Subsets 
-Permutations
 *More Advanced Graph Problems
 Dynamic Programming
 Greedy Algorithms
