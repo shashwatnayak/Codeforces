@@ -4,21 +4,22 @@ Basic_Graph
 DFS
 BFS
 Single Source Shortest Path
-
-On Work
-Weighted_Graph
-Trees(Traversals & More to do)
-Linked List
 Trees (Traversals,summation,lca,misc,construction and converstion,check if)
+Trees(Traversals & More to do)
+Weighted_Graph
+Linked List
 Subsets 
 Permutations
 BST
-
-
-TD
 Segment Trees
 Fenwick Trees
+
+
+
+On Work
+TD
 Tries
+
 *More Advanced Graph Problems
 Dynamic Programming
 Greedy Algorithms
