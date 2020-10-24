@@ -64,7 +64,13 @@ void inorder3(TreeNode* root){
 
     TreeNode* cur = root;
     TreeNode* prev;
-
+    // 1 Case error for this method. Possibly More. Why ?
+    /*          1
+              /    \
+            Null    2
+                  /    \
+                3       Null  ans - 1 3 2
+    */
     while(cur!=NULL){
 
         if(cur->left==NULL){
@@ -126,9 +132,9 @@ void postorder(TreeNode* root){
 
 void postorder2(TreeNode *root){
     stack<TreeNode *>s,ss;
-    TreeNode* cur;
+    TreeNode* cur = root;
     s.push(cur);
-
+    //Doesnt handle NULL Case
     while(!s.empty()){
         cur = s.top();
         ss.push(s.top());
