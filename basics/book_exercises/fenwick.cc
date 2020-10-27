@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+using namespace std;
 typedef vector<int> vi;
 class FenwickTree {
 private: vi ft; // recall that vi is: typedef vector<int> vi;

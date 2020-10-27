@@ -1,6 +1,6 @@
 #include<iostream>
 #include<vector>
-
+using namespace std;
 typedef vector<int> vi;
 
 class SegmentTree { // the segment tree is stored like a heap array
