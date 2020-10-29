@@ -13,14 +13,13 @@ Permutations
 BST
 Segment Trees
 Fenwick Trees
-
+Union-Find
 
 
 On Work
-TD
-Tries
 
 *More Advanced Graph Problems
 Dynamic Programming
 Greedy Algorithms
+Tries
 
