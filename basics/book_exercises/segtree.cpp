@@ -1,47 +1,55 @@
 #include<iostream>
 #include<vector>
+
 using namespace std;
+
 typedef vector<int> vi;
 
-class SegmentTree { // the segment tree is stored like a heap array
-
-private: vi st, A; // recall that vi is: typedef vector<int> vi;
+class SegmentTree{
+private:
+vi st,A;
 int n;
-int left (int p) { return p << 1; } // same as binary heap operations
-int right(int p) { return (p << 1) + 1; }
-
-void build(int p, int L, int R) { // O(n)
-if (L == R) // as L == R, either one is fine
-    st[p] = L; // store the index
-else { // recursively compute the values
-        build(left(p) , L , (L + R) / 2);
-        build(right(p), (L + R) / 2 + 1, R );
-        int p1 = st[left(p)], p2 = st[right(p)];
-        st[p] = (A[p1] <= A[p2]) ? p1 : p2;
-    } 
+void build(int p,int l,int r){
+if(l==r){
+    st[p] = l;
+}else{
+// from top-down tree build
+int m = (l+r)/2;
+build(p<<1,l,m);  
+build((p<<1) + 1,m+1,r);
+int p1 = st[(p<<1)];
+int p2 = st[(p<<1)+1];
+st[p] = (A[p1] <= A[p2]) ? p1 : p2;
 }
-int rmq(int p, int L, int R, int i, int j) { // O(log n)
-if (i > R || j < L) return -1; // current segment outside query range
-if (L >= i && R <= j) return st[p]; // inside query range
-// compute the min position in the left and right part of the interval
-int p1 = rmq(left(p) , L , (L+R) / 2, i, j);
-int p2 = rmq(right(p), (L+R) / 2 + 1, R , i, j);
-if (p1 == -1) return p2; // if we try to access segment outside query
-if (p2 == -1) return p1; // same as above
-return (A[p1] <= A[p2]) ? p1 : p2; // as in build routine
+}
+
+int rmq(int p,int l ,int r,int i,int j){
+if(i>r || j<l)return -1; // outside query range
+if(l>=i && r<=j)return st[p]; // inside query range check
+int m = (l+r)/2;
+int leftrmq = rmq(p<<1,l,m,i,j) ;  // get left min idx
+int rightrmq = rmq((p<<1)+1,m+1,r,i,j) ; // get right min idx
+if(leftrmq==-1)return rightrmq; // accidental outside check left query
+if(rightrmq==-1)return leftrmq; // accidental outside check right query
+return (A[leftrmq] <= A[rightrmq]) ? leftrmq : rightrmq; // return least of left and right query
 }
 public:
-SegmentTree(const vi &_A) {
-A = _A; n = (int)A.size(); // copy content for local usage
-st.assign(4 * n, 0); // create large enough vector of zeroes
-build(1, 0, n - 1); // recursive build
+SegmentTree(const vi &_A){
+A = _A;
+n = (int)A.size();
+st.assign(4*n,0);
+build(1,0,n-1);
 }
-int rmq(int i, int j) { return rmq(1, 0, n - 1, i, j); } // overloading
+int rmq(int i,int j){
+    return rmq(1,0,n-1,i,j);
+}
 };
-int main() {
-int arr[] = { 18, 17, 13, 19, 15, 11, 20 }; // the original array
-vi A(arr, arr + 7);
-SegmentTree st(A);
-printf("RMQ(1, 3) = %d\n", st.rmq(1, 3)); // answer = index 2
-printf("RMQ(4, 6) = %d\n", st.rmq(4, 6)); // answer = index 5
-} // return 0;
+
+int main(){
+    int arr[] = {18,17,13,19,15,11,20};
+    vi A(arr,arr+7);
+    SegmentTree st(A);
+    cout << (1<<4) <<" "<< (5<<1) << "\n";
+    printf("RMQ(1, 3) = %d\n", st.rmq(1, 3)); // answer = index 2
+    printf("RMQ(4, 6) = %d\n", st.rmq(4, 6)); // answer = index 5
+}
