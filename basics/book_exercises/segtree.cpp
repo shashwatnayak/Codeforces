@@ -53,3 +53,12 @@ int main(){
     printf("RMQ(1, 3) = %d\n", st.rmq(1, 3)); // answer = index 2
     printf("RMQ(4, 6) = %d\n", st.rmq(4, 6)); // answer = index 5
 }
+
+/*
+1. A = {10,2,47,3,7,9,1,98,21} rmq (1,7) and rmq(3,8)
+2. range sum queries
+3.  rsq(1,7) & rsq (3,8)
+4. point update function - array update update(idx,val)
+5. point update function - delete and insert. what will happen ?
+6. Range update operation. Given subarray and (i,j). Update the Segment tree 
+*/
