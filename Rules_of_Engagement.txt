@@ -1,7 +1,16 @@
 Following are the rules that has to be followed by me during these coding practice sessions.
 
-1. Optional Coding Practice on Saturday and Sunday, Only Project Work decided on previous Weekend to do.
-2. Minimum 2 hour Study per day. 4 each on Saturday and Sunday (To improve) (Not Followed)
-3. 5 New Problem per day during Weekdays
-4. Strict Planning for upcoming Weekdays on either on Sat/Sunday. 
-5. 4 breaks per month
+1. Must Project Work for 6 hours atleast. Free to choose anytime
+2. Minimum 3 hour Study per day.
+3. 3 New Problem per day during Weekdays for LEETCODE
+4. Strict Planning for upcoming Weekdays on either on Sat/Sunday for deciding what problems to do. 
+5. No breaks per month anymore
+6. Interview Preparation sets for Amazon, Goldman Sachs, Adobe and other companies etc.
+
+SIX WEEKS PLAN
+* GRE 2 hours study per day
+7. System Design to Study 4 hours per week
+8. OS 4 hours per week
+9. Networking 4 hours per week
+10. OOPS 3 hours per week
+11. DS/ALGO - Study 5 hours, 10 hours practice per week
