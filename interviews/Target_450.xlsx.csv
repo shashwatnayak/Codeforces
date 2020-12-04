@@ -235,8 +235,8 @@ Binary Search Trees,Largest BST in a Binary Tree [ V.V.V.V.V IMP ],<->
 Binary Search Trees,Flatten BST to sorted list,<->
 ,,
 ,,
-Greedy,Activity Selection Problem,<->
-Greedy,Job SequencingProblem,<->
+Greedy,Activity Selection Problem,<yes>
+Greedy,Job SequencingProblem,<yes>
 Greedy,Huffman Coding,<->
 Greedy,Water Connection Problem,<->
 Greedy,Fractional Knapsack Problem,<->
