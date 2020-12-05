@@ -64,11 +64,31 @@ void maximum_train(){
 
 }
 
-void minimum_platform(){
+void minimum_platform(vi arr, vi dep){
+sort(arr.begin(),arr.end());
+sort(dep.begin(),dep.end());
+int plat_max = 1;
+int res = 1;
+int i,j;
+i = j = 0;
+int n = arr.size();
+while(i < n && j < n){
 
+    if(arr[i] < dep[j]){
+        plat_max++;
+        i++;
+    } else if(arr[i] > dep [j]){
+        plat_max--;
+        j++;
+    }
+    if(plat_max > res){
+        res = plat_max;
+    }
+}
+cout << res << " ";
 }
 
-void maximise_ari(vi a){
+void maximise_ar_i(vi a){
 int sum = 0;
 sort(a.begin(),a.end());
 for(int i = 0;i<a.size();i++){
