@@ -68,11 +68,54 @@ while(i<n){
  two--;   
 }
 }
+
+void kadane_algo(vi a){
+int n = a.size();
+int max_sum = a[0];
+int cur_max = a[0];
+
+for(int i = 1;i<n;i++){
+cur_max = cur_max + a[i];
+if(cur_max<0){
+    cur_max = 0;
+}else if(cur_max > max_sum){
+    max_sum = cur_max;
+}
+}
+cout << max_sum << endl;
+}
+
+void duplicate_nplusone(vi a,int n){
+int n_t = a.size();
+int ss = ((n)*(n+1))/2;
+int ts = 0;
+for(auto x : a){
+    ts+=x;
+}
+
+cout << ts - ss << "\n";
+}
+
+void move_all_negative_atoneend(vi a){
+    int j = 0;
+    for(int i = 0;i<a.size();i++){
+        if(a[i]<0){
+            if(i!=j){
+            swap(a[i],a[j]);
+            }
+            j++;
+        }
+    }
+    print(a);
+}
 void test_cases(){
     vi a;
     reverse(a);
     min_max(a);
     sort_012(a);
+    kadane_algo(a);
+    move_all_negative_atoneend(a);
+    duplicate_nplusone(a,a.size()-1);
 }
 int main(){
 test_cases();
