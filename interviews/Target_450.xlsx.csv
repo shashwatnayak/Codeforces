@@ -7,15 +7,15 @@ Array,Reverse the array,Yes
 Array,Find the maximum and minimum element in an array,Yes
 Array,"Find the ""Kth"" max and min element of an array ",<->
 Array,"Given an array which consists of only 0, 1 and 2. Sort the array without using any sorting algo",yes
-Array,Move all the negative elements to one side of the array ,<->
+Array,Move all the negative elements to one side of the array ,<yes>
 Array,Find the Union and Intersection of the two sorted arrays.,<->
 Array,Write a program to cyclically rotate an array by one.,<->
-Array,find Largest sum contiguous Subarray [V. IMP],<->
+Array,find Largest sum contiguous Subarray [V. IMP],<yes>
 Array,Minimise the maximum difference between heights [V.IMP],<->
 Array,Minimum no. of Jumps to reach end of an array,<->
-Array,find duplicate in an array of N+1 Integers,<->
+Array,find duplicate in an array of N+1 Integers,<yes>
 Array,Merge 2 sorted arrays without using Extra space.,<->
-Array,Kadane's Algo [V.V.V.V.V IMP],<->
+Array,Kadane's Algo [V.V.V.V.V IMP],<yes>
 Array,Merge Intervals,<->
 Array,Next Permutation,<->
 Array,Count Inversion,<->
@@ -399,7 +399,7 @@ Graph,Minimise the cashflow among a given set of friends who have borrowed money
 Graph,Two Clique Problem,<->
 ,,
 ,,
-Trie,Construct a trie from scratch,<->
+Trie,Construct a trie from scratch,<yes>
 Trie,Find shortest unique prefix for every word in a given list,<->
 Trie,Word Break Problem | (Trie solution),<->
 Trie,"Given a sequence of words, print all anagrams together",<->
