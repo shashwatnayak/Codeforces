@@ -242,7 +242,7 @@ Greedy,Water Connection Problem,<->
 Greedy,Fractional Knapsack Problem,<->
 Greedy,Greedy Algorithm to find Minimum number of Coins,<->
 Greedy,Maximum trains for which stoppage can be provided,<->
-Greedy,Minimum Platforms Problem,<->
+Greedy,Minimum Platforms Problem,<yes>
 Greedy,Buy Maximum Stocks if i stocks can be bought on i-th day,<->
 Greedy,Find the minimum and maximum amount to buy all N candies,<->
 Greedy,Minimize Cash Flow among a given set of friends who have borrowed money from each other,<->
@@ -251,7 +251,7 @@ Greedy,Check if it is possible to survive on Island,<->
 Greedy,Find maximum meetings in one room,<->
 Greedy,Maximum product subset of an array,<->
 Greedy,Maximize array sum after K negations,<->
-Greedy,Maximize the sum of arr[i]*i,<->
+Greedy,Maximize the sum of arr[i]*i,<yes>
 Greedy,Maximum sum of absolute difference of an array,<->
 Greedy,Maximize sum of consecutive differences in a circular array,<->
 Greedy,Minimum sum of absolute difference of pairs of two arrays,<->
