@@ -1,8 +1,11 @@
 #include<iostream>
 #include<queue>
+#include<stack>
 #include<map>
+#include<utility>
 using namespace std;
 
+typedef pair<int,TreeNode* > PAIR;
 class TreeNode{
 public:
     int val;
@@ -134,7 +137,99 @@ TreeNode* LCAHelp(TreeNode* a,TreeNode* b){
 
 }
 TreeNode* LCA(){
-TreeNode* lcaroot = LCAHelp();
+TreeNode* a;
+TreeNode* b;
+TreeNode* lcaroot = LCAHelp(a,b);
+}
+
+void bottom_view(TreeNode* root){
+queue<pair<int,TreeNode*> > q;
+map<int,TreeNode* > m;
+q.push(make_pair(0,root));
+
+while(!q.empty()){
+    int hd = q.front().first;
+    TreeNode* cur = q.front().second;
+    q.pop();
+    m[hd] = cur;
+    if(cur->left){
+        q.push(make_pair(hd-1,cur->left));
+    }
+    if(cur->right){
+        q.push(make_pair(hd+1,cur->right));
+    }
+}
+map<int,TreeNode*> :: iterator it = m.begin();
+while(it!=m.end()){
+    cout << it->second->val;
+    it++;
+}
+}
+
+void left_view(TreeNode* root){
+queue<TreeNode* > q;
+q.push(root);
+
+while(!q.empty()){
+    int n = q.size();
+    for(int i = 1;i<=n;i++){
+        TreeNode* cur = q.front();
+        q.pop();
+
+        if(i==1){
+            cout << cur->val << " ";
+        }
+        if(cur->left){
+            q.push(cur->left);
+        }
+        if(cur->right){
+            q.push(cur->right);
+        }
+    }
+}
+}
+void right_view(TreeNode* root){
+queue<TreeNode* > q;
+q.push(root);
+
+while(!q.empty()){
+    int n = q.size();
+    for(int i = 1;i<=n;i++){
+        TreeNode* cur = q.front();
+        q.pop();
+
+        if(i==n){
+            cout << cur->val << " ";
+        }
+        if(cur->left){
+            q.push(cur->left);
+        }
+        if(cur->right){
+            q.push(cur->right);
+        }
+    }
+}
+}
+void top_view(TreeNode* root){
+queue<pair<int,TreeNode*> > q;
+map<int,vector<TreeNode*> > m;
+q.push(make_pair(0,root));
+
+while(!q.empty()){
+    int hd = q.front().first;
+    TreeNode* cur = q.front().second;
+    q.pop();
+    m[hd].push_back(cur);
+    if(cur->left){
+        q.push(make_pair(hd-1,cur->left));
+    }
+    if(cur->right){
+        q.push(make_pair(hd+1,cur->right));
+    }
+}
+for(auto it = m.begin();it!=m.end();it++){
+    cout << it->second[0]->val;
+}
 }
 void test_cases(){
     TreeNode* root = createTree();

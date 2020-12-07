@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
 typedef vector<int> vi;
 
@@ -107,6 +108,16 @@ void move_all_negative_atoneend(vi a){
         }
     }
     print(a);
+}
+// nlogn method (Implemented)
+// minheap and max heap method (To look at)
+// quick select partioning method - average - O(n) and worse O(n^2) (To look at)
+void kthmin_max(vi a,int k){
+    sort(a.begin(),a.end());
+    // for min 
+    cout << a[k-1];
+    // for max 
+    cout << a[a.size()-k+1];
 }
 void test_cases(){
     vi a;

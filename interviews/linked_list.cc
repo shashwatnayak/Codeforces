@@ -96,6 +96,28 @@ while(slow && fast && fast->next){
 }
 return s;
 }
+
+Node* reverse_inkgroup(Node* head,int k){
+if(head == NULL){
+    return;
+}
+Node* cur = head;
+Node* ah = NULL;
+Node* prev = NULL;
+int count = 0;
+while(cur!=NULL && count < k){
+ah = cur->next;
+cur->next = prev;
+prev = cur;
+cur = ah;
+count++;
+}
+if(ah!=NULL){
+    head->next = reverse_inkgroup(ah,k);
+}
+
+return prev;
+}
 void test_cases(){
     Node* a;
     a = reverse_rec(a);
@@ -105,6 +127,80 @@ void test_cases(){
      a = mergesort(a);
     cout << middle_element(a)->val;
 
+}
+
+// To be tested other wise go recursive;
+class CNode{
+public:
+int val;
+CNode* right;
+CNode* down;
+CNode(int d){
+    val = d;
+    right = NULL;
+    down = NULL;
+}
+};
+CNode* downmerge(CNode* a,CNode* b){
+if(a == NULL){
+    return b;
+}else if(b== NULL){
+    return a;
+}
+
+CNode* res = NULL;
+
+if(a->val < b->val){
+res = a;
+a->down = downmerge(a->down,b);
+}else{
+b->down = downmerge(a,b->down);
+}
+
+return res;
+}
+void flatten(CNode* root){
+if(root==NULL || root->right == NULL)return;
+
+while(root->down!=NULL){
+if(root->right!=NULL){
+CNode* b = root->right;
+root = downmerge(root,b);
+root->right = NULL;
+}
+root = root->down;
+}
+}
+
+void inplace_sort(Node* head){
+    int count_zero = 0;
+    int count_one = 1;
+    int count_two = 2;
+    Node* cur = head;
+    while(cur!=NULL){
+        if(cur->val == 0){
+            count_zero++;
+        }else if(cur->val == 1){
+            count_one++;
+        }else if(cur->val == 2){
+            count_two++;
+        }
+        cur = cur->next;
+    }
+    cur = head;
+    while(cur!=NULL){
+        if(count_zero!=0){
+            cur->val = 0;
+            count_zero--;
+        }else if(count_one!=0){
+            cur->val = 1;
+            count_one--;
+        }else if(count_two!=0){
+            cur->val = 2;
+            count_zero--;
+        }
+        cur = cur->next;
+    }
 }
 int main(){
 
