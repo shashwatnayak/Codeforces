@@ -5,7 +5,7 @@ Topic:,Problem: ,Done [yes or no]
 ,,
 Array,Reverse the array,Yes
 Array,Find the maximum and minimum element in an array,Yes
-Array,"Find the ""Kth"" max and min element of an array ",<->
+Array,"Find the ""Kth"" max and min element of an array ",<yes>
 Array,"Given an array which consists of only 0, 1 and 2. Sort the array without using any sorting algo",yes
 Array,Move all the negative elements to one side of the array ,<yes>
 Array,Find the Union and Intersection of the two sorted arrays.,<->
@@ -137,7 +137,7 @@ Searching & Sorting,Partitioning and Sorting Arrays with Many Repeated Entries,<
 ,,
 ,,
 LinkedList,Write a Program to reverse the Linked List. (Both Iterative and recursive),yes
-LinkedList,Reverse a Linked List in group of Given Size. [Very Imp],<->
+LinkedList,Reverse a Linked List in group of Given Size. [Very Imp],<yes>
 LinkedList,Write a program to Detect loop in a linked list.,yes
 LinkedList,Write a program to Delete loop in a linked list.,yes
 LinkedList,Find the starting point of the loop. ,<->
@@ -163,8 +163,8 @@ LinkedList,Rotate DoublyLinked list by N nodes.,<->
 LinkedList,Rotate a Doubly Linked list in group of Given Size.[Very IMP],<->
 LinkedList,Can we reverse a linked list in less than O(n) ?,yes
 LinkedList,Why Quicksort is preferred for. Arrays and Merge Sort for LinkedLists ?,yes
-LinkedList,Flatten a Linked List,<->
-LinkedList,"Sort a LL of 0's, 1's and 2's",<->
+LinkedList,Flatten a Linked List,<yes>
+LinkedList,"Sort a LL of 0's, 1's and 2's",<yes>
 LinkedList,Clone a linked list with next and random pointer,<->
 LinkedList,Merge K sorted Linked list,<->
 LinkedList,Multiply 2 no. represented by LL,<->
@@ -182,10 +182,10 @@ Binary Trees,Mirror of a tree,<yes>
 Binary Trees,Inorder Traversal of a tree both using recursion and Iteration,<yes>
 Binary Trees,Preorder Traversal of a tree both using recursion and Iteration,<yes>
 Binary Trees,Postorder Traversal of a tree both using recursion and Iteration,<yes>
-Binary Trees,Left View of a tree,<->
-Binary Trees,Right View of Tree,<->
-Binary Trees,Top View of a tree,<->
-Binary Trees,Bottom View of a tree,<->
+Binary Trees,Left View of a tree,<yes>
+Binary Trees,Right View of Tree,<yes>
+Binary Trees,Top View of a tree,<yes>
+Binary Trees,Bottom View of a tree,<yes>
 Binary Trees,Zig-Zag traversal of a binary tree,<->
 Binary Trees,Check if a tree is balanced or not,<->
 Binary Trees,Diagnol Traversal of a Binary tree,<->
