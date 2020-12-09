@@ -96,6 +96,10 @@ for(int i = 0;i<a.size();i++){
 }
 cout << sum << endl;
 }
+
+void max_subset_product(vi a){
+    
+}
 void test_cases(){
     Activity arr[] = {{5, 9}, {1, 2}, {3, 4}, {0, 6},{5, 7}, {8, 9}}; 
     int n = sizeof(arr)/sizeof(arr[0]); 

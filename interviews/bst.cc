@@ -216,6 +216,37 @@ if(prev2 == NULL){
 }
 }
 }
+
+/*Few Variations to take care of*/
+TreeNode* prev;
+void FlattenBST(TreeNode* root,TreeNode* &prev){
+if(root==NULL){
+    return;
+}    
+FlattenBST(root->right,prev);
+FlattenBST(root->left,prev);
+root->left = NULL;
+root->right = prev;
+prev = root;
+}
+/*
+prev = NULL;
+FlattenBST(root,prev);
+*/
+
+TreeNode* lcaBST(TreeNode* root,int key1,int key2){
+    if(root==NULL){
+        return NULL;
+    }
+
+    if(root->left && root->val > key1 && root->val > key2){
+        return lcaBST(root->left,key1,key2);
+    }
+    if(root->right && root->val < key1 && root->val < key2){
+        return lcaBST(root->right,key1,key2);
+    }
+    return root;
+}
 int main(){
 
 }
