@@ -211,19 +211,19 @@ Binary Trees,Find all Duplicate subtrees in a Binary tree [ IMP ],<->
 Binary Trees,Tree Isomorphism Problem,<->
 ,,
 ,,
-Binary Search Trees,Fina a value in a BST,<->
-Binary Search Trees,Deletion of a node in a BST,<->
-Binary Search Trees,Find min and max value in a BST,<->
-Binary Search Trees,Find inorder successor and inorder predecessor in a BST,<->
-Binary Search Trees,Check if a tree is a BST or not ,<->
+Binary Search Trees,Fina a value in a BST,<yes>
+Binary Search Trees,Deletion of a node in a BST,<yes>
+Binary Search Trees,Find min and max value in a BST,<yes>
+Binary Search Trees,Find inorder successor and inorder predecessor in a BST,<yes>
+Binary Search Trees,Check if a tree is a BST or not ,<yes>
 Binary Search Trees,Populate Inorder successor of all nodes,<->
 Binary Search Trees,Find LCA  of 2 nodes in a BST,<->
 Binary Search Trees,Construct BST from preorder traversal,<->
 Binary Search Trees,Convert Binary tree into BST,<->
 Binary Search Trees,Convert a normal BST into a Balanced BST,<->
-Binary Search Trees,Merge two BST [ V.V.V>IMP ],<->
-Binary Search Trees,Find Kth largest element in a BST,<->
-Binary Search Trees,Find Kth smallest element in a BST,<->
+Binary Search Trees,Merge two BST [ V.V.V>IMP ],<yes>
+Binary Search Trees,Find Kth largest element in a BST,<yes>
+Binary Search Trees,Find Kth smallest element in a BST,<yes>
 Binary Search Trees,"Count pairs from 2 BST whose sum is equal to given value ""X""",<->
 Binary Search Trees,Find the median of BST in O(n) time and O(1) space,<->
 Binary Search Trees,Count BST ndoes that lie in a given range,<->
