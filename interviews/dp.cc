@@ -99,7 +99,7 @@ for(int i = 0;i<m;i++){
 for(int i = 1;i<=n;i++){
     for(int j = 0;j<m;j++){
         if(i-arr[j] < 0){
-            dp[i][j] = 0
+            dp[i][j] = 0;
         }
         if(j<=0 || i-arr[j] >=1){
             dp[i][j] = 0;

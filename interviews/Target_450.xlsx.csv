@@ -217,7 +217,7 @@ Binary Search Trees,Find min and max value in a BST,<yes>
 Binary Search Trees,Find inorder successor and inorder predecessor in a BST,<yes>
 Binary Search Trees,Check if a tree is a BST or not ,<yes>
 Binary Search Trees,Populate Inorder successor of all nodes,<->
-Binary Search Trees,Find LCA  of 2 nodes in a BST,<->
+Binary Search Trees,Find LCA  of 2 nodes in a BST,<yes>
 Binary Search Trees,Construct BST from preorder traversal,<->
 Binary Search Trees,Convert Binary tree into BST,<->
 Binary Search Trees,Convert a normal BST into a Balanced BST,<->
@@ -232,7 +232,7 @@ Binary Search Trees,"Given ""n"" appointments, find the conflicting appointments
 Binary Search Trees,Check preorder is valid or not,<->
 Binary Search Trees,Check whether BST contains Dead end,<->
 Binary Search Trees,Largest BST in a Binary Tree [ V.V.V.V.V IMP ],<->
-Binary Search Trees,Flatten BST to sorted list,<->
+Binary Search Trees,Flatten BST to sorted list,<yes>
 ,,
 ,,
 Greedy,Activity Selection Problem,<yes>
@@ -407,13 +407,13 @@ Trie,Implement a Phone Directory,<->
 Trie,Print unique rows in a given boolean matrix,<->
 ,,
 ,,
-Dynamic Programming,Coin ChangeProblem,<->
-Dynamic Programming,Knapsack Problem,<->
-Dynamic Programming,Binomial CoefficientProblem,<->
-Dynamic Programming,Permutation CoefficientProblem,<->
-Dynamic Programming,Program for nth Catalan Number,<->
+Dynamic Programming,Coin ChangeProblem,<yes>
+Dynamic Programming,Knapsack Problem,<yes>
+Dynamic Programming,Binomial CoefficientProblem,<yes>
+Dynamic Programming,Permutation CoefficientProblem,<yes>
+Dynamic Programming,Program for nth Catalan Number,<yes>
 Dynamic Programming,Matrix Chain Multiplication ,<->
-Dynamic Programming,Edit Distance,<->
+Dynamic Programming,Edit Distance,<yes>
 Dynamic Programming,Subset Sum Problem,<->
 Dynamic Programming,Friends Pairing Problem,<->
 Dynamic Programming,Gold Mine Problem,<->
@@ -433,7 +433,7 @@ Dynamic Programming,Egg Dropping Problem,<->
 Dynamic Programming,Maximum Length Chain of Pairs,<->
 Dynamic Programming,Maximum size square sub-matrix with all 1s,<->
 Dynamic Programming,Maximum sum of pairs with specific difference,<->
-Dynamic Programming,Min Cost PathProblem,<->
+Dynamic Programming,Min Cost PathProblem,<yes>
 Dynamic Programming,Maximum difference of zeros and ones in binary string,<->
 Dynamic Programming,Minimum number of jumps to reach end,<->
 Dynamic Programming,Minimum cost to fill given weight in a bag,<->
