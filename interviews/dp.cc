@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<cstring>
 using namespace std;
 
 // Catalan - Recursive
@@ -194,6 +195,205 @@ int maxPathSum(vector<vector<int> > mat){
         }
     }
     return mat[r-1][c];
+}
+
+// Longest Common subsequence - Recursive
+int LCSR(string s1 ,string s2,int m,int n){
+    if(m==0 || n == 0){
+        return 0;
+    }
+    if(s1[m-1] == s2[n-1]){
+        return 1 + LCSR(s1,s2,m-1,n-1);
+    }else{
+        return max(LCSR(s1,s2,m-1,n),LCSR(s1,s2,m,n-1));
+    }
+}
+// Longest Common Subsequence - DP
+// Do a printing LCS too later
+int LCSDP(string s1,string s2,int m,int n){
+int dp[m+1][n+1];
+
+for(int i = 0;i<=m;i++){
+    for(int j = 0;j<=n;j++){
+        if(i == 0 || j == 0){
+            dp[i][j] = 0;
+        }
+        if(s1[i-1] == s2[j-1]){
+            dp[i][j] = 1 + dp[i-1][j-1];
+        }else{
+            dp[i][j] = max(dp[i-1][j],dp[i][j-1]);
+        }
+    }
+}
+
+int res = -1;
+for(int k = 0;k < n;k++){
+    res = max(res,dp[m][k]);
+}
+return res;
+
+}
+// Longest Repeated Subsequence - DP 
+// variation of LCS - with i!=j
+// Do a printing LCS too later
+int LRSDP(string s1,string s2,int m,int n){
+int dp[m+1][n+1];
+
+for(int i = 0;i<=m;i++){
+    for(int j = 0;j<=n;j++){
+        if(i == 0 || j == 0){
+            dp[i][j] = 0;
+        }
+        if(s1[i-1] == s2[j-1] && i!=j){
+            dp[i][j] = 1 + dp[i-1][j-1];
+        }else{
+            dp[i][j] = max(dp[i-1][j],dp[i][j-1]);
+        }
+    }
+}
+
+int res = -1;
+for(int k = 0;k < n;k++){
+    res = max(res,dp[m][k]);
+}
+return res;
+
+}
+// Longest Increasing Subsequence - DP
+// To check again on logic
+int LIS(int arr[],int n){
+int dp[n];
+dp[0] = 1;
+for(int i = 1;i<n;i++){
+dp[i] = 1;
+for(int j = 0;j<i;j++){
+    if(arr[i] > arr[j] && dp[i] < dp[j] + 1){
+        dp[i] = dp[j] + 1;
+    }
+}
+}
+}
+
+// Subset Sum - Recursive
+bool isSubsetSum(int set[],int n,int sum){
+    if(sum > 0 || n == 0){
+        return false;
+    }
+    if(sum == 0){
+        return true;
+    }
+    if(set[n-1] > sum){
+        return isSubsetSum(set,n-1,sum);
+    }
+    return (isSubsetSum(set,n-1,sum) || isSubsetSum(set,n-1,sum - set[n-1]));
+}
+
+// SubsetSum - DP
+
+bool isSubsetSumDP(int set[],int n,int sum){
+    bool dp[n+1][sum+1];
+
+    for(int i = 0;i<=n;i++){
+        for(int j = 0;j<=sum;j++){
+            if(i == 0 || j > 0){
+                dp[i][j] = false;
+            }else if(j == 0){
+                dp[i][j] = 1;
+            }else if(set[i-1] > j){
+                dp[i][j] = dp[i-1][j];
+            }else if(j>= set[i-1]){
+                dp[i][j] = dp[i-1][j] || dp[i-1][j-set[i-1]];
+
+            }
+        }
+    }
+
+    return dp[n][sum];
+}
+// Friend Pairing
+int countFriendsPairings(int n) 
+{ 
+    int dp[n + 1]; 
+  
+     
+    for (int i = 0; i <= n; i++) { 
+        if (i <= 2) 
+            dp[i] = i; 
+        else
+            dp[i] = dp[i - 1] + (i - 1) * dp[i - 2]; 
+    } 
+  
+    return dp[n]; 
+} 
+const int MAX = 1000;
+int goldMine(int mat[][MAX],int m,int n){
+int dp[m][n];
+memset(dp,0,sizeof(mat));
+
+for(int c = 1;c<n;c++){
+    for(int r = 0;r<m;r++){
+
+        int right = (c == n-1) ? 0 : dp[r-1][c];
+        int right_up = (r == 0 && c == n-1) ? 0 : dp[r-1][c-1];
+        int right_down = (r == m-1 && c == n-1) ? 0 : dp[r-1][c+1];
+
+        // Could have used mat for updation as well.
+        dp[r][c] = mat[r][c] + max(max(right,right_up),right_down);  
+    }
+}
+int res = -1;
+for(int i = 0;i<m;i++){
+    res = max(res,dp[i][n-1]);
+}
+return res;
+}
+
+// Longest Common Substring - R
+
+int LCSubstring_R(string s1,string s2,int m,int n,int &c){
+    if(m == 0 || n == 0){
+        return 0;
+    }
+    if(s1[m-1] == s2[n-1]){
+        c = LCSubstring_R(s1,s2,m-1,n-1,c+1);
+    }
+    c = max(LCSubstring_R(s1,s2,m-1,n,0),LCSubstring_R(s1,s2,m,n-1,0));
+
+    return c;
+}
+
+// LC Substring DP
+int LCS_DP(string s1,string s2,int m,int n){
+    int dp[m+1][n+1];
+    int res = -1e9;
+    for(int i = 0;i<=m;i++){
+        for(int j = 0;j<=n;j++){
+            
+            if(i==0 || j == 0){
+                dp[i][j] = 0;
+            }
+            
+            if(s1[i-1] == s2[j-1]){
+                dp[i][j] = 1+ dp[i-1][j-1];
+                res = max(res,dp[i][j]);
+            }else{
+                dp[i][j] = 0;
+            }
+        }
+    }
+return res;
+}
+
+int kadane(int arr[],int n){
+    int cur_max = arr[0];
+    int ovr_max = arr[0];
+
+    for(int i = 1;i<n;i++){
+        cur_max = max(arr[i],arr[i] + cur_max);
+        ovr_max = max(cur_max,ovr_max);
+        )
+    }
+    return ovr_max;
 }
 int main(){
 
