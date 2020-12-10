@@ -414,15 +414,15 @@ Dynamic Programming,Permutation CoefficientProblem,<yes>
 Dynamic Programming,Program for nth Catalan Number,<yes>
 Dynamic Programming,Matrix Chain Multiplication ,<->
 Dynamic Programming,Edit Distance,<yes>
-Dynamic Programming,Subset Sum Problem,<->
-Dynamic Programming,Friends Pairing Problem,<->
-Dynamic Programming,Gold Mine Problem,<->
+Dynamic Programming,Subset Sum Problem,<yes>
+Dynamic Programming,Friends Pairing Problem,<yes>
+Dynamic Programming,Gold Mine Problem,<yes>
 Dynamic Programming,Assembly Line SchedulingProblem,<->
 Dynamic Programming,Painting the Fenceproblem,<->
 Dynamic Programming,Maximize The Cut Segments,<->
-Dynamic Programming,Longest Common Subsequence,<->
-Dynamic Programming,Longest Repeated Subsequence,<->
-Dynamic Programming,Longest Increasing Subsequence,<->
+Dynamic Programming,Longest Common Subsequence,<yes>
+Dynamic Programming,Longest Repeated Subsequence,<yes>
+Dynamic Programming,Longest Increasing Subsequence,<yes>
 Dynamic Programming,Space Optimized Solution of LCS,<->
 Dynamic Programming,LCS (Longest Common Subsequence) of three strings,<->
 Dynamic Programming,Maximum Sum Increasing Subsequence,<->
@@ -438,10 +438,10 @@ Dynamic Programming,Maximum difference of zeros and ones in binary string,<->
 Dynamic Programming,Minimum number of jumps to reach end,<->
 Dynamic Programming,Minimum cost to fill given weight in a bag,<->
 Dynamic Programming,Minimum removals from array to make max –min <= K,<->
-Dynamic Programming,Longest Common Substring,<->
+Dynamic Programming,Longest Common Substring,<yes>
 Dynamic Programming,Count number of ways to reacha given score in a game,<->
 Dynamic Programming,Count Balanced Binary Trees of Height h,<->
-Dynamic Programming,LargestSum Contiguous Subarray [V>V>V>V IMP ],<->
+Dynamic Programming,LargestSum Contiguous Subarray [V>V>V>V IMP ],<yes>
 Dynamic Programming,Smallest sum contiguous subarray,<->
 Dynamic Programming,Unbounded Knapsack (Repetition of items allowed),<->
 Dynamic Programming,Word Break Problem,<->
