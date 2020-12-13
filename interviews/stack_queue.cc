@@ -64,7 +64,7 @@ while(head!=NULL){
 };
 
 //TB Verify from actualy behavior
-class queue{
+class Queue{
 class Node{
     public:
     int val;
@@ -77,7 +77,7 @@ class Node{
 
 Node* front;
 Node* rear;
-queue(){
+Queue(){
 front = rear = NULL;
 }
 void push(int val){
@@ -106,7 +106,7 @@ tmp = tmp->next;
 }
 return count;
 }
-~queue(){
+~Queue(){
 Node* tmp = front;
 
 while(front!=NULL){
@@ -166,6 +166,165 @@ sortStack(s);
 insert_sortstack(s,x);
 }
 }
+
+class Stack_using_queue{
+queue<int> q1,q2;
+public:
+Stack_using_queue(){}
+void push(int x){
+q2.push(x);
+while(!q1.empty()){
+    q2.push(q1.front());
+    q1.pop();
+}
+queue<int>tmp = q1;
+q1 = q2;
+q2 = tmp;
+}
+void pop(){
+q2.pop();
+}
+void size(){
+cout << q1.size();
+}
+void top(){
+cout << q2.front();
+}
+};
+
+// Easy - using STL
+/*class Stack_using_deque{
+deque<int> q;
+public:
+void push(int x){
+q.push_back(x);
+}
+void pop(){
+q.pop_back();
+}
+void top(){
+cout << q.back();
+}
+void size(){
+cout << q.size();
+}
+};
+*/
+
+class DEQUE{
+private:
+    class dqNode{
+        public:
+        int val;
+        dqNode* next;
+        dqNode* prev;
+        dqNode(int x){
+            val = x;
+            prev = NULL;
+            next = NULL;
+        }
+        // dqNode(){
+        //     next = NULL;
+        //     prev = NULL;
+        // }
+};
+dqNode *head;
+dqNode *tail;
+public:
+DEQUE(){
+    head = tail = NULL;
+}
+bool isEmpty(){
+    if(head == NULL){
+        return true;
+    }
+    return false;
+}
+
+int size(){
+if(!isEmpty()){
+    return 0;
+}else{
+    int len = 0;
+    dqNode* tmp = head;
+    while(tmp!=NULL){
+        len++;
+        tmp = tmp->next;
+    }
+    return len;
+}
+}
+void insert_first(int x){
+dqNode* tmp = new dqNode(x);
+if(head==NULL){
+head = tail = tmp;
+//tmp->next = tmp->prev = NULL;
+}else{
+head->prev = tmp;
+tmp->next = head;
+tmp->prev = NULL;
+head = tmp;
+}
+}
+void insert_back(int x){
+dqNode* tmp = new dqNode(x);
+if(head==NULL){
+head = tail = tmp;
+//tmp->next = tmp->prev = NULL;
+}else{
+tail->next = tmp;
+tmp->next = NULL;
+tmp->prev = tail;
+tail = tmp;
+}
+}
+void remove_first(){
+if(!isEmpty()){
+    dqNode *tmp = head;
+    head = head->next;
+    head->prev = NULL;
+    delete(tmp);
+    return;
+}
+}
+void remove_back(){
+if(!isEmpty()){
+    dqNode *tmp = tail;
+    tail = tail->prev;
+    tail->next = NULL;
+    delete(tmp);
+    return;
+}
+}
+
+void display(){
+
+}
+};
+
+class STACK_DQ : public DEQUE {
+DEQUE s;
+
+public:
+
+void push(int x){
+s.insert_back(x);
+}
+void pop(){
+s.remove_back();
+}
+};
+class QUEUE_DQ : public DEQUE {
+DEQUE q;
+public:
+void push(int x){
+q.insert_back(x);
+}
+void pop(){
+q.remove_first();
+}
+};
+
 int main(){
 
 }
