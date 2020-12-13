@@ -1,7 +1,7 @@
 ,,
 ,,
 ,,
-Topic:,Problem: ,Done [yes or no] 
+Topic:,Problem: 
 ,,
 Array,Reverse the array,Yes
 Array,Find the maximum and minimum element in an array,Yes
@@ -272,20 +272,20 @@ Greedy,Rearrange characters in a string such that no two adjacent are same,<->
 Greedy,Find maximum sum possible equal sum of three stacks,<->
 ,,
 ,,
-BackTracking,Rat in a maze Problem,<->
-BackTracking,Printing all solutions in N-Queen Problem,<->
+BackTracking,Rat in a maze Problem,<yes>
+BackTracking,Printing all solutions in N-Queen Problem,<yes>
 BackTracking,Word Break Problem using Backtracking,<->
 BackTracking,Remove Invalid Parentheses,<->
-BackTracking,Sudoku Solver,<->
-BackTracking,m Coloring Problem,<->
+BackTracking,Sudoku Solver,<yes>
+BackTracking,m Coloring Problem,<yes>
 BackTracking,Print all palindromic partitions of a string,<->
-BackTracking,Subset Sum Problem,<->
-BackTracking,The Knight’s tour problem,<->
+BackTracking,Subset Sum Problem,<yes>
+BackTracking,The Knight’s tour problem,<yes>
 BackTracking,Tug of War,<->
-BackTracking,Find shortest safe route in a path with landmines,<->
-BackTracking,Combinational Sum,<->
+BackTracking,Find shortest safe route in a path with landmines,<yes>
+BackTracking,Combinational Sum,<yes>
 BackTracking,Find Maximum number possible by doing at-most K swaps,<->
-BackTracking,Print all permutations of a string ,<->
+BackTracking,Print all permutations of a string ,<yes>
 BackTracking,Find if there is a path of more than k length from a source,<->
 BackTracking,Longest Possible Route in a Matrix with Hurdles,<->
 BackTracking,Print all possible paths from top left to bottom right of a mXn matrix,<->
