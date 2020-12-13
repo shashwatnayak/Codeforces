@@ -1,4 +1,6 @@
 #include<iostream>
+#include<stack>
+#include<queue>
 using namespace std;
 
 class Stack{
@@ -114,3 +116,56 @@ while(front!=NULL){
 }
 }
 };
+
+void reverse_Str(string a){
+    stack<char> s;
+    for(int i = 0;i<a.size();i++){
+        s.push(a[i]);
+    }
+    for(int i = 0;i<a.size();i++){
+        a[i] = s.top();
+        s.pop();
+    }
+}
+
+stack<char> st;
+string s;
+void insert_at_bottom(char x){
+    if(st.size()==0){
+        st.push(x);
+    }else{
+        char a = st.top();
+        st.pop();
+        insert_at_bottom(x);
+        st.push(a);
+    }
+}
+void stack_reverse(){
+while(st.size()>0){
+    char x = st.top();
+    st.pop();
+    stack_reverse();
+    insert_at_bottom(x);
+}
+}
+void insert_sortstack(stack<int> s,int x){
+if(s.size()==0 || x > s.top()){
+s.push(x);
+return;
+}
+int tmp = s.top();
+s.pop();
+insert_sortstack(s,x); 
+s.push(tmp);
+}
+void sortStack(stack<int> s){
+if(s.size()!=0){
+int x = s.top();
+s.pop();
+sortStack(s);
+insert_sortstack(s,x);
+}
+}
+int main(){
+
+}
