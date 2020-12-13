@@ -299,15 +299,15 @@ Stacks & Queues,Implement 2 stack in an array,<->
 Stacks & Queues,find the middle element of a stack,<->
 Stacks & Queues,"Implement ""N"" stacks in an Array",<->
 Stacks & Queues,Check the expression has valid or Balanced parenthesis or not.,<->
-Stacks & Queues,Reverse a String using Stack,<->
+Stacks & Queues,Reverse a String using Stack,<yes>
 Stacks & Queues,Design a Stack that supports getMin() in O(1) time and O(1) extra space.,<->
 Stacks & Queues,Find the next Greater element,<->
 Stacks & Queues,The celebrity Problem,<->
 Stacks & Queues,Arithmetic Expression evaluation,<->
 Stacks & Queues,Evaluation of Postfix expression,<->
-Stacks & Queues,Implement a method to insert an element at its bottom without using any other data structure.,<->
-Stacks & Queues,Reverse a stack using recursion,<->
-Stacks & Queues,Sort a Stack using recursion,<->
+Stacks & Queues,Implement a method to insert an element at its bottom without using any other data structure.,<yes>
+Stacks & Queues,Reverse a stack using recursion,<yes>
+Stacks & Queues,Sort a Stack using recursion,<yes>
 Stacks & Queues,Merge Overlapping Intervals,<->
 Stacks & Queues,Largest rectangular Area in Histogram,<->
 Stacks & Queues,Length of the Longest Valid Substring,<->
@@ -333,11 +333,11 @@ Stacks & Queues,Queue based approach or first non-repeating character in a strea
 Stacks & Queues,Next Smaller Element,<->
 ,,
 ,,
-Heap,Implement a Maxheap/MinHeap using arrays and recursion.,<->
-Heap,Sort an Array using heap. (HeapSort),<->
+Heap,Implement a Maxheap/MinHeap using arrays and recursion.,<yes>
+Heap,Sort an Array using heap. (HeapSort),<yes>
 Heap,Maximum of all subarrays of size k.,<->
-Heap,“k” largest element in an array,<->
-Heap,Kth smallest and largest element in an unsorted array,<->
+Heap,“k” largest element in an array,<yes>
+Heap,Kth smallest and largest element in an unsorted array,<yes>
 Heap,Merge “K” sorted arrays. [ IMP ],<->
 Heap,Merge 2 Binary Max Heaps,<->
 Heap,Kth largest sum continuous subarrays,<->
