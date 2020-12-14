@@ -9,7 +9,7 @@ if(x<0 && y < 0 && x >=n && y>=n && mat[x][y] == 0){
 }
 return true;
 }
-bool ratmaze(int sol[][n],int mat[][n],int x,int y,int n){
+bool ratmaze(bool sol[][n],int mat[][n],int x,int y,int n){
     if(x == n-1 && y == n-1 && mat[x][y] == 1 && sol[x][y] == 1){
         return true;
     }
