@@ -1,7 +1,11 @@
 #include<iostream>
 #include<vector>
+#include<utility>
+#include<set>
 #include<algorithm>
+#define MAX 500
 using namespace std;
+
 typedef vector<int> vi;
 
 void print(vi a){
@@ -118,6 +122,90 @@ void kthmin_max(vi a,int k){
     cout << a[k-1];
     // for max 
     cout << a[a.size()-k+1];
+}
+
+int multiply(int x,int res[],int res_size){
+int carry = 0;
+for(int i = 0;i<res_size;i++){
+    int prod = res[i]*x + carry;
+    res[i] = prod %10;
+    carry = prod/10;
+}
+
+while(carry){
+res[res_size] = carry%10;
+carry = carry/10;
+res_size++;
+}
+
+return res_size;
+}
+void factorial_large(int n){
+    int res[MAX];
+    int res_size = 1;
+    res[0] = 1;
+    for(int i = 2;i<=n;i++){
+        res_size = multiply(i,res,res_size);
+    }
+    // Printing Factorial with individual digits
+    for(int i = res_size - 1;i>=0;i--){
+        cout << res[i];
+    }
+} 
+
+bool ifsubarrayzero(vi a){
+    unordered_set<int>s;
+    int sum = 0;
+    for(int i = 1;i<a.size();i++){
+        sum+=a[i];
+        if(sum==0 || s.find(sum)!=s.end()){
+            return true;
+        }
+        s.insert(sum);
+ 
+    }
+    return false;
+}
+
+bool subsetarray(vi a,vi b){
+
+    int i = 0;
+    int j = 0;
+    int n = a.size();
+    int m = b.size();
+    sort(a.begin(),a.end());
+    sort(b.begin(),b.end());
+
+    while(i<n && j<m){
+
+        if(a[i]==b[j]){
+            i++;
+            j++;
+        }else if(a[i] < b[j]){
+            i++;
+        }else if(a[i] > b[j]){
+            return 0;
+        }
+    }
+    return (j<m) ? false : true;
+}
+
+void rearrangelalternate(vi a){
+    int i = -1;
+    for(int j = 0;j<a.size();j++){
+        if(a[j]<0){
+            i++;
+            swap(a[i],a[j]);
+        }
+    }
+    int pos = i+1;
+    int neg = 0;
+    int n = a.size();
+    while(neg < n && pos < n && a[neg < 0]){
+        swap(a[neg],a[pos]);
+        pos++;
+        neg+=2;
+    }
 }
 void test_cases(){
     vi a;
