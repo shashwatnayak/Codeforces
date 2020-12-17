@@ -207,6 +207,139 @@ void rearrangelalternate(vi a){
         neg+=2;
     }
 }
+
+// Doesnt handle duplicate
+// Sorted case
+void Union(vi a, vi b){
+int i = 0;
+int j = 0;
+int n = a.size();
+int m = b.size();
+while(i<n && j<m){
+if(a[i] < b[j]){
+cout << a[i] << " ";
+i++;
+}else if(a[i] > b[j]){
+cout << b[j] << " ";
+j++;
+}else {
+    cout <<a[i] << " ";
+    i++;
+    j++;
+}
+}
+if(n > m){
+    while(i!=n){
+        cout << a[i] << " ";
+    }
+}else{
+
+    while(j!=m){
+        cout << b[j] << " ";
+    }
+}
+}
+void Intersection(vi a,vi b){
+int i = 0;
+int j = 0;
+int n = a.size();
+int m = b.size();
+
+while(i<n && j < m){
+    if(a[i]==b[j]){
+        cout << a[i] << " ";
+        i++;
+        j++;
+    }else if(a[i] < b[j]{
+        i++;
+    }else if(a[i]>b[j]){
+        j++;
+    }
+}
+}
+void rotate_one(vi &a){
+    int n = a.size();
+    int x = a[n-1];
+    for(int i = n-1;i>0;i--){
+        a[i] = a[i-1];
+    }
+    a[0] = x;
+}
+
+void commoninthreesorted(vi a,vi b,vi c){
+int n = a.size();
+int m = b.size();
+int p = c.size();
+
+int i,j,k;
+i = j = k = 0;
+
+while(i< n && j <m && k <p){
+if(a[i] == b[j] == c[k]){
+cout << a[i] << " ";
+i++;
+j++;
+k++;
+}else if(a[i] < c[k] && b[j] < c[k]){
+i++;
+j++;
+}else if(a[i] < b[j] && c[k] < b[j]){
+i++;
+k++;
+}else if(b[j]<a[i] && c[k] < a[i]){
+j++;
+k++;
+}else if(a[i] < b[j] && b[j] == c[k]){
+i++;
+}else if (b[j] < a[i] && a[i] == c[k]){
+j++;
+}else if (c[k] < b[j] && a[i] == b[j]){
+k++;
+}
+
+}
+}
+
+void triplet(vi a,int sum){
+int n = a.size();
+
+for(int i = 0; i <n ;i++){
+    int l = i+1;
+    int r = n-1;
+    while(l!=r){
+        if(a[i] + a[l] + a[r] == sum){
+                cout << "Printall" << endl;
+                cout << a[i] << " "<<a[l] << " "<< a[r] << endl;
+                break;
+        }else if(a[i] + a[l] + a[r] < sum){
+                l++;
+        }else if (a[i] + a[l] + a[r] > sum){
+                r--;
+        }
+    }
+}
+}
+
+int maxWater(int arr[], int n) 
+{
+     
+    int res = 0;
+     
+    for (int i = 1; i < n-1; i++) {
+         
+        int left = arr[i];
+        for (int j=0; j<i; j++)
+           left = max(left, arr[j]);
+         
+        int right = arr[i];
+        for (int j=i+1; j<n; j++)
+           right = max(right, arr[j]); 
+        
+       res = res + (min(left, right) - arr[i]);   
+    }
+ 
+    return res; 
+} 
 void test_cases(){
     vi a;
     reverse(a);
