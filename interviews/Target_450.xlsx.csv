@@ -108,11 +108,11 @@ Searching & Sorting,Find the repeating and the missing,<->
 Searching & Sorting,find majority element,<->
 Searching & Sorting,Searching in an array where adjacent differ by at most k,<->
 Searching & Sorting,find a pair with a given difference,<->
-Searching & Sorting,find four elements that sum to a given value,<->
+Searching & Sorting,find four elements that sum to a given value,<yes>
 Searching & Sorting,maximum sum such that no 2 elements are adjacent,<->
 Searching & Sorting,Count triplet with sum smaller than a given value,<->
 Searching & Sorting,merge 2 sorted arrays,<->
-Searching & Sorting,print all subarrays with 0 sum,<->
+Searching & Sorting,print all subarrays with 0 sum,<yes>
 Searching & Sorting,Product array Puzzle,<->
 Searching & Sorting,Sort array according to count of set bits,<->
 Searching & Sorting,minimum no. of swaps required to sort the array,<->
@@ -140,20 +140,20 @@ LinkedList,Write a Program to reverse the Linked List. (Both Iterative and recur
 LinkedList,Reverse a Linked List in group of Given Size. [Very Imp],<yes>
 LinkedList,Write a program to Detect loop in a linked list.,yes
 LinkedList,Write a program to Delete loop in a linked list.,yes
-LinkedList,Find the starting point of the loop. ,<->
+LinkedList,Find the starting point of the loop. ,<yes>
 LinkedList,Remove Duplicates in a sorted Linked List.,<->
 LinkedList,Remove Duplicates in a Un-sorted Linked List.,<->
-LinkedList,Write a Program to Move the last element to Front in a Linked List.,<->
+LinkedList,Write a Program to Move the last element to Front in a Linked List.,<yes>
 LinkedList,Add “1” to a number represented as a Linked List.,<->
 LinkedList,Add two numbers represented by linked lists.,<->
-LinkedList,Intersection of two Sorted Linked List.,<->
-LinkedList,Intersection Point of two Linked Lists.,<->
+LinkedList,Intersection of two Sorted Linked List.,<yes>
+LinkedList,Intersection Point of two Linked Lists.,<yes>
 LinkedList,Merge Sort For Linked lists.[Very Important],yes
 LinkedList,Quicksort for Linked Lists.[Very Important],<->
 LinkedList,Find the middle Element of a linked list.,yes
 LinkedList,Check if a linked list is a circular linked list.,<->
 LinkedList,Split a Circular linked list into two halves.,<->
-LinkedList,Write a Program to check whether the Singly Linked list is a palindrome or not.,<->
+LinkedList,Write a Program to check whether the Singly Linked list is a palindrome or not.,<yes>
 LinkedList,Deletion from a Circular Linked List.,<->
 LinkedList,Reverse a Doubly Linked list.,<->
 LinkedList,Find pairs with a given sum in a DLL.,<->
@@ -170,7 +170,7 @@ LinkedList,Merge K sorted Linked list,<->
 LinkedList,Multiply 2 no. represented by LL,<->
 LinkedList,Delete nodes which have a greater value on right side,<->
 LinkedList,Segregate even and odd nodes in a Linked List,<->
-LinkedList,Program for n’th node from the end of a Linked List,<->
+LinkedList,Program for n’th node from the end of a Linked List,<yes>
 LinkedList,Find the first non-repeating character from a stream of characters,<->
 ,,
 ,,
@@ -287,7 +287,7 @@ BackTracking,Combinational Sum,<yes>
 BackTracking,Find Maximum number possible by doing at-most K swaps,<->
 BackTracking,Print all permutations of a string ,<yes>
 BackTracking,Find if there is a path of more than k length from a source,<->
-BackTracking,Longest Possible Route in a Matrix with Hurdles,<->
+BackTracking,Longest Possible Route in a Matrix with Hurdles,<yes>
 BackTracking,Print all possible paths from top left to bottom right of a mXn matrix,<->
 BackTracking,Partition of a set intoK subsets with equal sum,<->
 BackTracking,Find the K-th Permutation Sequence of first N natural numbers,<->
@@ -298,13 +298,13 @@ Stacks & Queues, Implement Queue from Scratch,yes
 Stacks & Queues,Implement 2 stack in an array,<->
 Stacks & Queues,find the middle element of a stack,<->
 Stacks & Queues,"Implement ""N"" stacks in an Array",<->
-Stacks & Queues,Check the expression has valid or Balanced parenthesis or not.,<->
+Stacks & Queues,Check the expression has valid or Balanced parenthesis or not.,<yes>
 Stacks & Queues,Reverse a String using Stack,<yes>
 Stacks & Queues,Design a Stack that supports getMin() in O(1) time and O(1) extra space.,<->
 Stacks & Queues,Find the next Greater element,<->
 Stacks & Queues,The celebrity Problem,<->
-Stacks & Queues,Arithmetic Expression evaluation,<->
-Stacks & Queues,Evaluation of Postfix expression,<->
+Stacks & Queues,Arithmetic Expression evaluation,<yes>
+Stacks & Queues,Evaluation of Postfix expression,<yes>
 Stacks & Queues,Implement a method to insert an element at its bottom without using any other data structure.,<yes>
 Stacks & Queues,Reverse a stack using recursion,<yes>
 Stacks & Queues,Sort a Stack using recursion,<yes>
@@ -312,8 +312,8 @@ Stacks & Queues,Merge Overlapping Intervals,<->
 Stacks & Queues,Largest rectangular Area in Histogram,<->
 Stacks & Queues,Length of the Longest Valid Substring,<->
 Stacks & Queues,Expression contains redundant bracket or not,<->
-Stacks & Queues,Implement Stack using Queue,<->
-Stacks & Queues,Implement Stack using Deque,<->
+Stacks & Queues,Implement Stack using Queue,<yes>
+Stacks & Queues,Implement Stack using Deque,<yes>
 Stacks & Queues,Stack Permutations (Check if an array is stack permutation of other),<->
 Stacks & Queues,Implement Queue using Stack  ,<->
 Stacks & Queues,"Implement ""n"" queue in an array",<->
@@ -423,8 +423,8 @@ Dynamic Programming,Maximize The Cut Segments,<->
 Dynamic Programming,Longest Common Subsequence,<yes>
 Dynamic Programming,Longest Repeated Subsequence,<yes>
 Dynamic Programming,Longest Increasing Subsequence,<yes>
-Dynamic Programming,Space Optimized Solution of LCS,<->
-Dynamic Programming,LCS (Longest Common Subsequence) of three strings,<->
+Dynamic Programming,Space Optimized Solution of LCS,<yes>
+Dynamic Programming,LCS (Longest Common Subsequence) of three strings,<yes>
 Dynamic Programming,Maximum Sum Increasing Subsequence,<->
 Dynamic Programming,Count all subsequences having product less than K,<->
 Dynamic Programming,Longest subsequence such that difference between adjacent is one,<->
@@ -463,7 +463,7 @@ Dynamic Programming,Mobile Numeric Keypad Problem [ IMP ],<->
 Dynamic Programming,Boolean Parenthesization Problem,<->
 Dynamic Programming,Largest rectangular sub-matrix whose sum is 0,<->
 Dynamic Programming,Largest area rectangular sub-matrix with equal number of 1’s and 0’s [ IMP ],<->
-Dynamic Programming,Maximum sum rectangle in a 2D matrix,<->
+Dynamic Programming,Maximum sum rectangle in a 2D matrix,<yes>
 Dynamic Programming,Maximum profit by buying and selling a share at most k times,<->
 Dynamic Programming,Find if a string is interleaved of two other strings,<->
 Dynamic Programming,Maximum Length of Pair Chain,<->
