@@ -55,14 +55,14 @@ Matrix,Common elements in all rows of a given matrix,<->
 ,,
 String,Reverse a String,Yes
 String,Check whether a String is Palindrome or not,Yes
-String,Find Duplicate characters in a string,<->
+String,Find Duplicate characters in a string,<yes>
 String,Why strings are immutable in Java?,yes
-String,Write a Code to check whether one string is a rotation of another,<->
+String,Write a Code to check whether one string is a rotation of another,<yes>
 String,Write a Program to check whether a string is a valid shuffle of two strings or not,<->
 String,Count and Say problem,<->
 String,Write a program to find the longest Palindrome in a string.[ Longest palindromic Substring],<->
 String,Find Longest Recurring Subsequence in String,<->
-String,Print all Subsequences of a string.,<->
+String,Print all Subsequences of a string.,<yes>
 String,Print all the permutations of the given string,<->
 String,Split the Binary string into two substring with equal 0’s and 1’s,<->
 String,Word Wrap Problem [VERY IMP].,<->
@@ -70,8 +70,8 @@ String,EDIT Distance [Very Imp],<->
 String,Find next greater number with same set of digits. [Very Very IMP],<->
 String,Balanced Parenthesis problem.[Imp],<->
 String,Word break Problem[ Very Imp],<->
-String,Rabin Karp Algo,<->
-String,KMP Algo,<->
+String,Rabin Karp Algo,<yes>
+String,KMP Algo,<yes>
 String,Convert a Sentence into its equivalent mobile numeric keypad sequence.,<->
 String,Minimum number of bracket reversals needed to make an expression balanced.,<->
 String,Count All Palindromic Subsequence in a given String.,<->
@@ -121,8 +121,8 @@ Searching & Sorting,Rasta and Kheshtak,<->
 Searching & Sorting,Kth smallest number again,<->
 Searching & Sorting,Find pivot element in a sorted array,<->
 Searching & Sorting,K-th Element of Two Sorted Arrays,<->
-Searching & Sorting,Aggressive cows,<->
-Searching & Sorting,Book Allocation Problem,<->
+Searching & Sorting,Aggressive cows,<yes>
+Searching & Sorting,Book Allocation Problem,<yes>
 Searching & Sorting,EKOSPOJ:,<->
 Searching & Sorting,Job Scheduling Algo,<->
 Searching & Sorting,Missing Number in AP,<->
@@ -400,7 +400,7 @@ Graph,Two Clique Problem,<->
 ,,
 ,,
 Trie,Construct a trie from scratch,<yes>
-Trie,Find shortest unique prefix for every word in a given list,<->
+Trie,Find shortest unique prefix for every word in a given list,<yes>
 Trie,Word Break Problem | (Trie solution),<->
 Trie,"Given a sequence of words, print all anagrams together",<->
 Trie,Implement a Phone Directory,<->
