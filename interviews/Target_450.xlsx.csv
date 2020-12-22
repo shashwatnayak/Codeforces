@@ -41,14 +41,14 @@ Array,Median of 2 sorted arrays of equal size,<->
 Array,Median of 2 sorted arrays of different size,<->
 ,,<->
 ,,<->
-Matrix,Spiral traversal on a Matrix,<->
-Matrix,Search an element in a matriix,<->
+Matrix,Spiral traversal on a Matrix,<yes>
+Matrix,Search an element in a matriix,<yes>
 Matrix,Find median in a row wise sorted matrix,<->
 Matrix,Find row with maximum no. of 1's,<->
 Matrix,Print elements in sorted order using row-column wise sorted matrix,<->
 Matrix,Maximum size rectangle,<->
 Matrix,Find a specific pair in matrix,<->
-Matrix,Rotate matrix by 90 degrees,<->
+Matrix,Rotate matrix by 90 degrees,<yes>
 Matrix,Kth smallest element in a row-cpumn wise sorted matrix,<->
 Matrix,Common elements in all rows of a given matrix,<->
 ,,
@@ -69,7 +69,7 @@ String,Word Wrap Problem [VERY IMP].,<->
 String,EDIT Distance [Very Imp],<->
 String,Find next greater number with same set of digits. [Very Very IMP],<->
 String,Balanced Parenthesis problem.[Imp],<->
-String,Word break Problem[ Very Imp],<->
+String,Word break Problem[ Very Imp],<yes>
 String,Rabin Karp Algo,<yes>
 String,KMP Algo,<yes>
 String,Convert a Sentence into its equivalent mobile numeric keypad sequence.,<->
@@ -274,7 +274,7 @@ Greedy,Find maximum sum possible equal sum of three stacks,<->
 ,,
 BackTracking,Rat in a maze Problem,<yes>
 BackTracking,Printing all solutions in N-Queen Problem,<yes>
-BackTracking,Word Break Problem using Backtracking,<->
+BackTracking,Word Break Problem using Backtracking,<yes>
 BackTracking,Remove Invalid Parentheses,<->
 BackTracking,Sudoku Solver,<yes>
 BackTracking,m Coloring Problem,<yes>
@@ -295,7 +295,7 @@ BackTracking,Find the K-th Permutation Sequence of first N natural numbers,<->
 ,,
 Stacks & Queues, Implement Stack from Scratch,yes
 Stacks & Queues, Implement Queue from Scratch,yes
-Stacks & Queues,Implement 2 stack in an array,<->
+Stacks & Queues,Implement 2 stack in an array,<yes>
 Stacks & Queues,find the middle element of a stack,<->
 Stacks & Queues,"Implement ""N"" stacks in an Array",<->
 Stacks & Queues,Check the expression has valid or Balanced parenthesis or not.,<yes>
@@ -401,7 +401,7 @@ Graph,Two Clique Problem,<->
 ,,
 Trie,Construct a trie from scratch,<yes>
 Trie,Find shortest unique prefix for every word in a given list,<yes>
-Trie,Word Break Problem | (Trie solution),<->
+Trie,Word Break Problem | (Trie solution),<yes>
 Trie,"Given a sequence of words, print all anagrams together",<->
 Trie,Implement a Phone Directory,<->
 Trie,Print unique rows in a given boolean matrix,<->
@@ -444,7 +444,7 @@ Dynamic Programming,Count Balanced Binary Trees of Height h,<->
 Dynamic Programming,LargestSum Contiguous Subarray [V>V>V>V IMP ],<yes>
 Dynamic Programming,Smallest sum contiguous subarray,<->
 Dynamic Programming,Unbounded Knapsack (Repetition of items allowed),<->
-Dynamic Programming,Word Break Problem,<->
+Dynamic Programming,Word Break Problem,<yes>
 Dynamic Programming,Largest Independent Set Problem,<->
 Dynamic Programming,Partition problem,<->
 Dynamic Programming,Longest Palindromic Subsequence,<->
