@@ -325,6 +325,74 @@ q.remove_first();
 }
 };
 
+bool validparanthesis(string s){
+stack<char> st;
+for(auto a : s){
+    if(a == '(' || a == '{' || a == '[' ){
+
+    }else if(st.empty() || (st.top() == '{' && a!='}') 
+    || (st.top() == '(' && a!=')') || (st.top() == '[' && a!=']')){
+        return false;
+    }else{
+        st.pop();
+    }
+}
+
+return st.empty();
+}
+
+class TwoStacks{
+int *arr;
+int top1;
+int top2;
+int size;
+public:
+TwoStacks(int n){
+size = n;
+arr = new int[n];
+top1 = -1;
+top2 = size;
+}
+
+void push1(int x){
+if(top1 < top2-1){
+top1++;
+arr[top1] = x;
+}else{
+    cout << "Overflow" << endl;
+    exit(1);
+}
+}
+int pop1(){
+if(top1>=0){
+top1--;
+int x = arr[top1];
+return x;
+}else{
+cout << "Overflow" << endl;
+exit(1);
+}
+}
+void push2(int x){
+if(top1 < top2-1){
+top2--;
+arr[top2] = x;
+}else{
+    cout << "Overflow" << endl;
+    exit(1);
+}
+}
+int pop2(){
+if(top2<size){
+top2++;
+int x = arr[top2];
+return x;
+}else{
+cout << "Overflow" << endl;
+exit(1);
+}
+}
+};
 int main(){
 
 }

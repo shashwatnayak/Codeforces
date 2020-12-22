@@ -355,7 +355,7 @@ int LCSubstring_R(string s1,string s2,int m,int n,int &c){
         return 0;
     }
     if(s1[m-1] == s2[n-1]){
-        c = LCSubstring_R(s1,s2,m-1,n-1,c+1);
+        c = LCSubstring_R(s1,s2,m-1,n-1,c + 1);
     }
     c = max(LCSubstring_R(s1,s2,m-1,n,0),LCSubstring_R(s1,s2,m,n-1,0));
 
@@ -391,9 +391,69 @@ int kadane(int arr[],int n){
     for(int i = 1;i<n;i++){
         cur_max = max(arr[i],arr[i] + cur_max);
         ovr_max = max(cur_max,ovr_max);
-        )
+        
     }
     return ovr_max;
+}
+
+int dictionary(string word){
+string dict[] = {"mobile","samsung","sam","sung", 
+                            "man","mango","icecream","and", 
+                             "go","i","like","ice","cream"};
+int size = sizeof(dict)/sizeof(dict[0]);
+
+for(int i = 0;i<size;i++){
+    if(dict[i].compare(word) == 0){
+        return true;
+    }
+}
+return false;
+}
+bool wordBreak(string s){
+if(s.size()==0){
+return true;
+}
+for(int i = 1;i<=s.size();i++){
+    string word = s.substr(0,i);
+
+    if(dictionary(word) && wordBreak(s.substr(i,s.size()-i))){
+        return true;
+    }
+}
+return false;
+}
+
+bool wordBreakDP(string s){
+int n = s.size();
+bool dp[n+1];
+memset(dp,0,sizeof(dp));
+for(int i = 1;i<=n;i++){
+    string word = s.substr(0,i);
+    if(dp[i] == false && dictionary(word)){
+        dp[i] = true;
+    }
+
+    if(dp[i]==true){
+        if(i==n){
+            return true;
+        }
+
+        for(int j = i+1;j<=n;j++){
+            string word = s.substr(i,j-i);
+            if(dp[j]==false && dictionary(word)){
+                dp[j] = true;
+            }
+
+            if(j==n && dp[j] == true){
+                return true;
+            }
+        }
+    }
+}
+// for(int i = 1;i<=n;i++){
+//     cout << dp[i] << " ";
+// }
+return false;
 }
 int main(){
 
